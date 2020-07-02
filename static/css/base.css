@@ -1,11 +1,12 @@
 
-#background {
-    height: 1300px;
-    width: 100% !important;
+.parallax {
+    background-image: url("../images/background.jpg");
     background-attachment: fixed;
-    background-position: center;
+    background-position: 0 Y;
     background-repeat: no-repeat;
     background-size: cover;
+    height: 700px;
+    width: 100% !important;
 }
 
 .main-nav {
@@ -22,3 +23,21 @@
     margin-top: 20px;
 }
 
+.nav-item {
+    color: white;
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+}
+
+.sub-head {
+    font-family: 'Satisfy', cursive;
+    font-size: 100px;
+    text-align: center;
+}
+
+.subhead-background {
+    height:300px;
+    font-size:36px;
+    z-index: 99999999;
+    background: rgba(190, 183, 183, 0.747);
+}
