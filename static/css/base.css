@@ -1,4 +1,24 @@
+
 #background {
     height: 1300px;
-    width: 1400px !important;
+    width: 100% !important;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
+.main-nav {
+    background-color: #a0c2e7;
+    width: 100% !important;
+    left: 0;
+}
+
+.main-logo {
+    color: white;
+    font-family: 'Satisfy', cursive;
+    font-size: 50px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
