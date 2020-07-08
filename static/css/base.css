@@ -71,9 +71,11 @@
 }
 
 /* nav bar */
+
 .main-nav {
     background-color: #a0c2e7;
     width: 100% !important;
+    height: 150px;
     left: 0;
 }
 
@@ -121,22 +123,28 @@
     font-family: 'Rubik', sans-serif;
 }
 
+/* products.html */
 
+.blankspace {
+    height: 200px;
+    background-color: white;
+    width: 100%;
+}
 
-.minibox1 {  
+.cakebox {  
     display: inline-block;
     box-sizing: border-box;
-    background-color: pink;
+    background-color: #EEF0F2;
     width: 400px !important;
     height: 400px;
+    position: relative;
 }
 
-.thing {
-    display: inline-block;
+.productrows {
+    display: inline-block;  
 }
 
-
-.allseriesimage {
+.cakeimage {
     width: 350px;
     height: 250px;
     text-align: center;
@@ -145,22 +153,24 @@
     margin: 0;
 }
 
-.allseriestitles {
-    font-size: 30px !important;
-    color: white;
-    font-family: 'Barlow', sans-serif;
+.cakename {
+    font-size: 20px !important;
+    font-family: 'Rubik', sans-serif;
+    color: #696969;
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
+    list-style: none;
 }
 
-.allseriestext {
-    font-size: 18px;
-    color: white;
-    font-family: 'Barlow', sans-serif;
+.cakeprice {
+    font-size: 15px;
+    color: #696969;
+    font-family: 'Rubik', sans-serif;
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
+    list-style: none;
 }
 
 /* media queries */

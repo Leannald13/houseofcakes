@@ -2,15 +2,14 @@
 {% load static %}
 
 {% block content %}
+<div class="blankspace"></div>
     {% for product in products %}
-      <div class="thing">
-      <div class="thing2"> 
-      <ul class="minibox1">  
-      <li><img class="allseriesimage" alt="boxsetpic" src="{{ product.image.url }}"></li>
-      <li class="allseriestitles">{{ product.name }}</li>
-      <li class="allseriestext"> £{{ product.price }}</li>
+      <div class="productrows">
+      <ul class="cakebox">  
+      <li><img class="cakeimage" alt="{{ product.name }}" src="{{ product.image_url }}"></li>
+      <li class="cakename">{{ product.name }}</li>
+      <li class="cakeprice"> £{{ product.price }}</li>
       </ul> 
-      </div>
       </div>
       
     
