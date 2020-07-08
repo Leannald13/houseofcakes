@@ -280,7 +280,7 @@ ul {
 }
 }
 
-@media (max-width: 968px) {
+@media (max-width: 768px) {
 .main-nav {
     background-color: #a0c2e7;
     width: 100% !important;
@@ -288,6 +288,16 @@ ul {
     left: 0;
 }
 }
+
+@media (min-width: 769px) and (max-width: 1024px ) {
+.main-nav {
+    background-color: #a0c2e7;
+    width: 100% !important;
+    height: 190px;
+    left: 0;
+}
+}
+
 
 @media (max-width: 968px) {
 .main-logo {
@@ -309,11 +319,12 @@ ul {
 }
 }
 
-@media (max-width: 968px) {
+@media (max-width: 768px) {
 .nav-item {
     padding-left: 20px;
 }
 }
+
 
 @media (max-width: 768px) {
 .cakeimage {
@@ -325,5 +336,13 @@ ul {
     margin-top: 30px;
     margin-left: 30px;
     list-style: none !important;
+}
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+span .navbar-toggler-icon {
+    margin-right: 100px !important;
+    float: left;
 }
 }
