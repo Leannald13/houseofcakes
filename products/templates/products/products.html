@@ -9,10 +9,12 @@
       <li><img class="cakeimage" alt="{{ product.name }}" src="{{ product.image_url }}"></li>
       <li class="cakename">{{ product.name }}</li>
       <li class="cakeprice"> £{{ product.price }}</li>
-      </ul> 
+      <form class="form-group" method="POST" action="">
+        <input type="number" name="quantity" min="1" max="5" class="form-control addcake-item" placeholder="Quantity" required>
+        <button class="btn btn-form-control addcake-button atc-btn" type="submit">Add To Cart</button>
+        </form>
+        </ul> 
       </div>
-      
-    
     {% endfor %} 
    
 

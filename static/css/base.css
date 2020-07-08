@@ -135,42 +135,72 @@
     display: inline-block;
     box-sizing: border-box;
     background-color: #EEF0F2;
-    width: 400px !important;
-    height: 400px;
+    width: 350px !important;
+    height: 470px;
     position: relative;
 }
 
 .productrows {
     display: inline-block;  
+    margin-left: 70px;
+    margin-bottom: 30px;
 }
 
 .cakeimage {
-    width: 350px;
-    height: 250px;
+    width: 270px;
+    height: 235px;
     text-align: center;
     box-sizing: border-box;
     padding: 0;
-    margin: 0;
+    margin-top: 20px;
+    list-style: none !important;
+}
+
+ul {
+    list-style: none;
 }
 
 .cakename {
-    font-size: 20px !important;
+    font-size: 15px !important;
     font-family: 'Rubik', sans-serif;
     color: #696969;
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
     list-style: none;
+    margin-right: 20px;
+    font-weight: bold;
 }
 
 .cakeprice {
-    font-size: 15px;
+    font-size: 12px;
     color: #696969;
     font-family: 'Rubik', sans-serif;
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
+    margin-right: 20px;
     list-style: none;
+}
+
+.addcake-item {
+    width: 120px;
+    text-align: center;
+    margin-left: 90px;
+}
+
+.addcake-button {
+    margin-left: 90px;
+    margin-top: 25px;
+    background-color: #D3D3D3;
+    color: #696969;
+}
+
+.addcake-button:hover {
+    margin-left: 90px;
+    margin-top: 25px;
+    background-color: #C0C0C0;
+    color: #696969;
 }
 
 /* media queries */
@@ -191,7 +221,8 @@
     text-align: center;
     padding-left: 40px;
     padding-right: 40px;
-    
+
+}
 }
 
 @media (max-width: 768px) {
@@ -234,3 +265,17 @@
 }
 }
 
+@media (min-width: 414px)  and (max-width: 968px) {
+.productrows {
+    display: inline-block; 
+    margin: 0; 
+}
+}
+
+@media (min-width: 414px) and (max-width: 968px) {
+.blankspace {
+    height: 170px;
+    background-color: white;
+    width: 100%;
+}
+}
