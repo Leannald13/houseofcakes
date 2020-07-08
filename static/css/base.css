@@ -121,6 +121,48 @@
     font-family: 'Rubik', sans-serif;
 }
 
+
+
+.minibox1 {  
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: pink;
+    width: 400px !important;
+    height: 400px;
+}
+
+.thing {
+    display: inline-block;
+}
+
+
+.allseriesimage {
+    width: 350px;
+    height: 250px;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.allseriestitles {
+    font-size: 30px !important;
+    color: white;
+    font-family: 'Barlow', sans-serif;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.allseriestext {
+    font-size: 18px;
+    color: white;
+    font-family: 'Barlow', sans-serif;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 /* media queries */
 
 @media (max-width: 768px) {
@@ -182,8 +224,3 @@
 }
 }
 
-.products {
-    width: 100%;
-    height: 1000px;
-    background-color: red;
-}

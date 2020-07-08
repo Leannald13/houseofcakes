@@ -1,10 +1,20 @@
-
+{% extends "base.html" %}
+{% load static %}
 
 {% block content %}
+    {% for product in products %}
+      <div class="thing">
+      <div class="thing2"> 
+      <ul class="minibox1">  
+      <li><img class="allseriesimage" alt="boxsetpic" src="{{ product.image.url }}"></li>
+      <li class="allseriestitles">{{ product.name }}</li>
+      <li class="allseriestext"> £{{ product.price }}</li>
+      </ul> 
+      </div>
+      </div>
+      
     
-<div class="container-fluid products">     
- {{ products }}
- </div>
-          
-    
+    {% endfor %} 
+   
+
 {% endblock %}
