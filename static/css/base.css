@@ -203,6 +203,14 @@ ul {
     color: #696969;
 }
 
+/* product details */
+
+.product-detail-background {
+    background-color: #EEF0F2;
+    width: 70%;
+    height: 600px;
+}
+
 /* media queries */
 
 @media (max-width: 768px) {

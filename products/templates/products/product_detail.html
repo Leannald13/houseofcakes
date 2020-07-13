@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="blankspace"></div>
+
+<div class="product-detail-background">
+<p><img class="cakeimage" alt="{{ product.name }}" src="{{ product.image_url }}"></p>
+ {{ product.name }}
+ £{{ product.price }}
+ {{ product.description }}
+
+ </div>
+
+
+   
+
+{% endblock %}

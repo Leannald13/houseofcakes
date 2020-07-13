@@ -9,9 +9,10 @@
       <li><img class="cakeimage" alt="{{ product.name }}" src="{{ product.image_url }}"></li>
       <li class="cakename">{{ product.name }}</li>
       <li class="cakeprice"> £{{ product.price }}</li>
-      <form class="form-group" method="POST" action="">
+      <form class="form-group" method="POST" action="{% url 'product_detail' product.id %}">
+        {% csrf_token %}
         <input type="number" name="quantity" min="1" max="5" class="form-control addcake-item" placeholder="Quantity" required>
-        <button class="btn btn-form-control addcake-button atc-btn" type="submit">Add To Cart</button>
+        <button class="btn btn-form-control addcake-button atc-btn" type="submit">Find Out More</button>
         </form>
         </ul> 
       </div>
