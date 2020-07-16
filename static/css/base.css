@@ -205,23 +205,23 @@ ul {
 
 /* product details */
 
-.product-detail-background {
+.product-background {
     background-color: #EEF0F2;
-    width: 70%;
-    height: 700px;
-    margin-left: 200px;
+    height: 500px;
     border: 2px;
     border-color: #A9A9A9;
     border-style: solid;
     border-radius: 10px;
+    margin-left: 100px;
 
 }
 
 .product-detail-image {
-    width: 400px;
-    height: 400px;
-    margin-left: 240px;
+    width: 300px;
+    height: 300px;
+    margin-left: 50px;
     margin-top: 50px;
+    display: inline-block;
 }
 
 .product-detail-name {

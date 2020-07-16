@@ -3,22 +3,26 @@
 
 {% block content %}
 <div class="blankspace"></div>
-<div class="product-detail-background">
-<ul class="product-details">
-<li><img class="product-detail-image" alt="{{ product.name }}" src="{{ product.image_url }}"></li>
- <li class="product-detail-name">{{ product.name }}</li>
- <li class="product-detail-description">{{ product.description }}</li>
- <li class="product-detail-price">£{{ product.price }}</li>
- <a class="btn btn-primary" href="{% url 'products' %}" role="button">Back</a>
-  <form class="form-group" method="POST" action="{% url 'product_detail' product.id %}">
+
+<div class="product-background mb-3" style="max-width: 1200px; max-height: 700px;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img class="product-detail-image" alt="{{ product.name }}" src="{{ product.image_url }}">
+    </div>
+    <div class="col-lg-8">
+      <div class="card-body">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text">{{ product.description }}</p>
+        <p class="card-text"><small>£{{ product.price }}</small></p>
+        <a class="btn btn-primary" href="{% url 'products' %}" role="button">Back</a>
+        <form class="form-group" method="POST" action="{% url 'product_detail' product.id %}">
         {% csrf_token %}
         <input type="number" name="quantity" min="1" max="5" class="form-control addcake-item" placeholder="Quantity" required>
         <button class="btn btn-form-control addcake-button atc-btn" type="submit">Add to Cart</button>
         </form>
- </ul>
- </div>
-
-
-   
+      </div>
+    </div>
+  </div>
+</div>
 
 {% endblock %}
