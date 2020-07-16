@@ -11,15 +11,15 @@
     </div>
     <div class="col-lg-8">
       <div class="card-body">
-        <h5 class="card-title">{{ product.name }}</h5>
-        <p class="card-text">{{ product.description }}</p>
-        <p class="card-text"><small>£{{ product.price }}</small></p>
-        <a class="btn btn-primary" href="{% url 'products' %}" role="button">Back</a>
+        <h5 class="product-detail-name">{{ product.name }}</h5>
+        <p class="product-detail-description">{{ product.description }}</p>
+        <p class="product-detail-price"><small>£{{ product.price }}</small></p>
         <form class="form-group" method="POST" action="{% url 'product_detail' product.id %}">
         {% csrf_token %}
-        <input type="number" name="quantity" min="1" max="5" class="form-control addcake-item" placeholder="Quantity" required>
-        <button class="btn btn-form-control addcake-button atc-btn" type="submit">Add to Cart</button>
+        <input type="number" name="quantity" min="1" max="5" class="form-control addtocart-item" placeholder="Quantity" required>
+        <button class="btn btn-form-control addtocart-button" type="submit">Add to Cart</button>
         </form>
+        <a class="btn btn-primary" id="backbutton" href="{% url 'products' %}" role="button">Back</a>
       </div>
     </div>
   </div>
