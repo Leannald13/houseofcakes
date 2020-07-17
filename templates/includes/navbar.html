@@ -3,6 +3,18 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler">
     <span class="navbar-toggler-icon"></span>
   </button>
+     <form method="GET" action="{% url 'products' %}">
+                    <div class="input-group w-100">
+                        <input class="form-control border border-white" type="text" name="q" placeholder="Search cakes">
+                        <div>
+                            <button class="form-control btn btn-white border border-white rounded-0" type="submit">
+                                <span class="icon">
+                                    <i class="fas fa-search"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
   <div class="collapse navbar-collapse" id="navbarToggler">
     <ul class="navbar-nav ml-auto w-auto">
       <li class="nav-item"><a class="nav-link" href="{% url 'home' %}"><strong>home</strong></a></li>
