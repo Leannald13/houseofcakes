@@ -83,10 +83,22 @@
     color: white;
     font-family: 'Rubik', sans-serif;
     font-size: 20px;
+    
 }
 
-.nav-link {
+.nav-link-active {
     background-color: #a0c2e7;
+    color: white;
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+}
+
+.nav-link-active:hover {
+    background-color: #a0c2e7;
+    color: white;
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    text-decoration: none;
 }
 
 .navbar-toggler {
@@ -95,6 +107,11 @@
 
 .fa-search {
     color: white;
+}
+
+.search-cake {
+    margin-left: 200px;
+    margin-top: 20px;
 }
 
 /* footer.html */

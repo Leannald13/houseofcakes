@@ -3,7 +3,7 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler">
     <span class="navbar-toggler-icon"></span>
   </button>
-     <form method="GET" action="{% url 'products' %}">
+     <form class="search-cake" method="GET" action="{% url 'products' %}">
                     <div class="input-group w-100">
                         <input class="form-control border border-white" type="text" name="q" placeholder="Search cakes">
                         <div>
@@ -17,11 +17,12 @@
                 </form>
   <div class="collapse navbar-collapse" id="navbarToggler">
     <ul class="navbar-nav ml-auto w-auto">
-      <li class="nav-item"><a class="nav-link" href="{% url 'home' %}"><strong>home</strong></a></li>
-      <li class="nav-item"><a class="nav-link" href="{% url 'products' %}"><strong>Shop</strong></a></li>
-      <li class="nav-item"><a class="nav-link" href=""><strong>Sign In/Register</strong></a></li>
-      <li class="nav-item"><a class="nav-link" href=""><strong>Cart</strong></a></li>
-      <li class="nav-item"><a class="nav-link" href=""><strong>Contact</strong></a></li>
-      </nav>
-
+      <li class="nav-item "><a class="nav-link-active" href="{% url 'home' %}">home</a></li>
+      <li class="nav-item"><a class="nav-link-active" href="{% url 'products' %}">shop</a></li>
+      <li class="nav-item"><a class="nav-link-active" href="">sign in/register</a></li>
+      <li class="nav-item"><a class="nav-link-active" href="">cart</a></li>
+      <li class="nav-item"><a class="nav-link-active" href="">contact</a></li>
+      </ul>
+    </div>
+    </nav>
      
