@@ -14,8 +14,8 @@
     <tr class="cart-subhead">
       <th scope="col"></th>
       <th scope="col"></th>
-      <th scope="col">Quantity</th>
       <th scope="col">Price</th>
+      <th scope="col">Quantity</th>
     </tr>
     <tr>
       <th scope="col" class="cart-items"><img src="{{ item.product.image_url  }}" class="image-cart" style="justify-content:space-between;" alt="item.product.description"></th>
@@ -32,12 +32,10 @@
 <section class="container">
   <div class="row cart-row">
         <div class="col-12">
-            <p>Total</p>
-            <p><span class="" aria-hidden="true">£</span>{{ total }}</p>
+            <strong class="total">Total:</strong>
+            <strong class="total"><span aria-hidden="true">£</span>{{ total }}</strong>
             {% if total > 0 %}
-                <a href="" class="btn" role="button">
-                    <span class="" aria-hidden="true">Checkout</span>
-                </a>
+                <a class="btn checkout-button" href="#" role="button">Checkout</a>
             {% else %}
                 <p>Your cart is now empty. Return to <a class="return-button" href="">store</a>.</p>
             {% endif %}
@@ -45,7 +43,7 @@
     </div>
 </section>
 </div>
-
+<div class="blankspace3"></div>
 {% endblock %}
 
 
