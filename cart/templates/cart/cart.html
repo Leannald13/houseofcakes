@@ -2,30 +2,31 @@
 {% load static %}
 
 {% block content %}
-<div class="blankspace"></div>
+<div class="blankspace2"></div>
+<div class="table-background">
 <h2 class="cart-heading">Shopping Bag</h2>
 
 {% if cart_items %}
  {% for item in cart_items %}
+
 <table class="table">
   <thead>
-    <tr>
-      <th scope="col">Item</th>
+    <tr class="cart-subhead">
+      <th scope="col"></th>
       <th scope="col"></th>
       <th scope="col">Quantity</th>
       <th scope="col">Price</th>
     </tr>
     <tr>
-      <th scope="col"><img src="{{ item.product.image_url  }}" class="image-cart" style="justify-content:space-between;" alt="item.product.description"></th>
-      <th scope="col">{{ item.product.name }}</th>
-      <th scope="col">£{{ item.product.price }}</th>
-      <th scope="col">{{ item.quantity }}</th>
-      <th scope="col"><a href="" class="btn-delete-cart"><i class="fas fa-trash"></i></a>
+      <th scope="col" class="cart-items"><img src="{{ item.product.image_url  }}" class="image-cart" style="justify-content:space-between;" alt="item.product.description"></th>
+      <th scope="col" class="cart-items">{{ item.product.name }}</th>
+      <th scope="col" class="cart-items">£{{ item.product.price }}</th>
+      <th scope="col" class="cart-items">{{ item.quantity }}</th>
+      <th scope="col" class="cart-items"><a href="" class="btn-delete-cart"><i class="fas fa-trash"></i></a><br>
       <a href="" class="btn-amend-cart">Amend</a></th>
     </tr>
   </thead>
-  </table>
-  
+  </table>  
  {% endfor %}
      {% endif %}
 <section class="container">
@@ -43,6 +44,8 @@
         </div>
     </div>
 </section>
+</div>
+
 {% endblock %}
 
 

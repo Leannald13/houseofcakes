@@ -46,7 +46,7 @@
     height:300px;
     font-size:30px;
     z-index: 99999999;
-    background: #fbf7f5;
+    background-color: #fbf7f5;
 }
 .subhead-about {
     width: 100%;
@@ -314,13 +314,46 @@ ul {
 
 /* cart.html */
 
+.blankspace2 {
+    height: 200px;
+    background-color: #f9f9f9;
+    width: 100%;
+}
+
 .image-cart {
     width: 200px;
     height: 200px;
+    margin-left: 50px;
 }
 
 .cart-heading {
       font-family: 'Satisfy', cursive;
+      font-size: 45px;
+      text-align: center;
+      color: #484848;
+      margin-bottom: 30px;
+}
+
+.table {
+    background-color: #fbf7f5;
+
+}
+
+.table-background {
+    background-color: #fbf7f5;
+}
+
+.cart-subhead {
+    color: #484848;
+}
+
+.cart-items {
+    color: #484848;
+    font-size: 15px;
+}
+
+#subhead-item {
+    margin-left: 100px;
 }
 
 /* media queries */
