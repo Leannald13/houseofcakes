@@ -311,13 +311,12 @@ ul {
     margin-left: 320px;
 }
 
-.img-fluid {
-    max-width: 200px;
-    max-height: 200px;
-}
 
-.my-0 {
-    display: table-cell;
+/* cart.html */
+
+.image-cart {
+    width: 200px;
+    height: 200px;
 }
 
 /* media queries */
