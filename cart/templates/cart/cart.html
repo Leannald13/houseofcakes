@@ -3,30 +3,50 @@
 
 {% block content %}
 <div class="blankspace"></div>
-<div class="container mb-2">
-        <div class="row">
-            <div class="col">
-                <hr>
-                <h2 class="logo-font mb-4">Shopping Bag</h2>
-                <hr>
-            </div>
-        </div>
-         <div class="row">
-            <div class="col">
-            {% if cart_items %}
-                    <div class="table-responsive rounded"></div>
-                    {{cart_items}}
+
+<section class="container">
+  <div class="row cart-row">
+        <div class="col-12">
+            <p>Total</p>
+            <p><span class="" aria-hidden="true">£</span>{{ total }}</p>
+            {% if total > 0 %}
+                <a href="" class="btn atc-btn" role="button">
+                    <span class="" aria-hidden="true">Checkout</span>
+                </a>
             {% else %}
-                    <p class="lead mb-5">Your bag is empty.</p>
-                    <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
-                        <span class="icon">
-                            <i class="fas fa-chevron-left"></i>
-                        </span>
-                        <span class="text-uppercase">Keep Shopping</span>
-                    </a>
-               {% endif %}
-            </div>
+                <p>Your cart is now empty. Return to <a class="coloured-links" href="">store</a>.</p>
+            {% endif %}
+
+        </div>
+    </div>
+{% if cart_items %}
+    <!-- Cart items -->
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-4 mx-auto image-cols">
+            {% for item in cart_items %}
+                <div class="card cart-cards">
+                    <div class="card-body store-cards">
+                        <img src="{{ item.product.image_url  }}" class="card-img-top img-fluid" alt="item.product.description">
+                        <p class="store-price">£{{ item.product.price }}</p>
+                        <form action="" class="form-group" method="POST">
+                            {% csrf_token %}
+                            <div class="form-control cart-quantity">Quantity Selected : {{ item.quantity }}</div>
+                            <div class="form-group">
+                                <input type="number" class="form-control store-form-item" name="quantity" min="0" max="5"
+                                       placeholder="Amend Quantity" required>
+                                <button class="btn form-control store-form-item atc-btn"
+                                        type="submit">Amend Quantity</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            {% endfor %}
+     {% endif %}
+
         </div>
     </div>
 
+</section>
 {% endblock %}
+
+

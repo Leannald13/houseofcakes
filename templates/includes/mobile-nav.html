@@ -18,6 +18,9 @@
       </li>
       <li class="nav-item">
           <a class="nav-link" href="{% url 'view_cart' %}">Cart</a>
+          {% if product_count > 0 %}
+        <label class="badge">{{ product_count }}</label>
+        {% endif %}
       </li>
       <li class="nav-item">
         <a class="nav-link" href="">Contact</a>
