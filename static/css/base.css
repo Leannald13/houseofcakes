@@ -319,6 +319,10 @@ ul {
     height: 200px;
 }
 
+.cart-heading {
+      font-family: 'Satisfy', cursive;
+}
+
 /* media queries */
 
 @media (max-width: 768px) {
