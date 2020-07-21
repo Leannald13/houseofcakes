@@ -6,8 +6,8 @@
 <div class="table-background">
 <h2 class="cart-heading">Shopping Bag</h2>
 
-{% if cart_items %}
- {% for item in cart_items %}
+
+
 
 <table class="table">
   <thead>
@@ -18,20 +18,22 @@
       <th scope="col" class="cart-head">Quantity</th>
     </tr>
     <tr>
-      <th scope="col" class="cart-items2"><img src="{{ item.product.image_url  }}" class="image-cart" style="justify-content:space-between;" alt="item.product.description"></th>
-      <th scope="col" class="cart-items">{{ item.product.name }}</th>
-      <th scope="col" class="cart-items">£{{ item.product.price }}</th>
-        <form class="update-cart" method="POST" action"">
-        {% csrf_token %}
-        <input type="number" value="{{ item.quantity }}" name="quantity" min="1" max="5" class="form-control addtocart-item" placeholder="Quantity" required>
-        </form>
-       <a class="update-link text-info"><small>Update</small></a>
-    <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
+     {% for item in cart_items %}
+      <th scope="col" class="cart2"><img src="{{ item.product.image_url  }}" class="image-cart" style="justify-content:space-between;" alt="item.product.description"></th>
+      <th scope="col" class="cart3">{{ item.product.name }}</th>
+      <th scope="col" class="cart3">£{{ item.product.price }}</th>
+         <form action="{% url 'adjust_cart' item.id %}" method="POST" class="form-group">
+          {% csrf_token %}
+            <div class="form-control cart-quantity">Quantity Selected : {{ item.quantity }}</div>
+                <div class="form-group">
+                    <input type="number" class="form-control store-form-item" name="quantity" min="0" max="5" placeholder="Amend Quantity" required>
+                <button class="btn form-control store-form-item atc-btn" type="submit">Amend Quantity</button>
   </thead>
-  </table>  
+  </table> 
+  
 
  {% endfor %}
-     {% endif %}
+   
 <section class="container">
   <div class="row cart-row">
         <div class="col-12">
@@ -49,23 +51,3 @@
 <div class="blankspace3"></div>
 {% endblock %}
 
-<script type="text/javascript">
-    // Update quantity on click
-    $('.update-link').click(function(e) {
-        var form = $(this).prev('.update-cart');
-        form.submit();
-    })
-
-    // Remove item and reload on click
-    $('.remove-item').click(function(e) {
-        var csrfToken = "{{ csrf_token }}";
-        var itemId = $(this).attr('id').split('remove_')[1];
-        var size = $(this).data('size');
-        var url = `/cart/remove/${itemId}`;
-
-        $.post(url, data)
-         .done(function() {
-             location.reload();
-         });
-    })
-</script>
