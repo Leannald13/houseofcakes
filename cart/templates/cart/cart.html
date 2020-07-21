@@ -12,13 +12,13 @@
 <table class="table">
   <thead>
     <tr class="cart-subhead">
-      <th scope="col"></th>
-      <th scope="col"></th>
-      <th scope="col">Price</th>
-      <th scope="col">Quantity</th>
+      <th scope="col" class="cart-head"></th>
+      <th scope="col" class="cart-head"></th>
+      <th scope="col" class="cart-head">Price</th>
+      <th scope="col" class="cart-head">Quantity</th>
     </tr>
     <tr>
-      <th scope="col" class="cart-items"><img src="{{ item.product.image_url  }}" class="image-cart" style="justify-content:space-between;" alt="item.product.description"></th>
+      <th scope="col" class="cart-items2"><img src="{{ item.product.image_url  }}" class="image-cart" style="justify-content:space-between;" alt="item.product.description"></th>
       <th scope="col" class="cart-items">{{ item.product.name }}</th>
       <th scope="col" class="cart-items">£{{ item.product.price }}</th>
       <th scope="col" class="cart-items">{{ item.quantity }}</th>
