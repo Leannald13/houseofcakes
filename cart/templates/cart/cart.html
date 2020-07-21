@@ -22,7 +22,7 @@
       <th scope="col" class="cart2"><img src="{{ item.product.image_url  }}" class="image-cart" style="justify-content:space-between;" alt="item.product.description"></th>
       <th scope="col" class="cart3">{{ item.product.name }}</th>
       <th scope="col" class="cart3">£{{ item.product.price }}</th>
-         <form action="{% url 'adjust_cart' item.id %}" method="POST" class="form-group">
+         <form action="{% url 'adjust_cart' item.product.id %}" method="POST" class="form-group">
           {% csrf_token %}
             <div class="form-control cart-quantity">Quantity Selected : {{ item.quantity }}</div>
                 <div class="form-group">
