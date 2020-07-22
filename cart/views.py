@@ -8,23 +8,23 @@ def view_cart(request):
     return render(request, 'cart/cart.html')
 
 
-def add_to_cart(request, item_id):
+def add_to_cart(request, product_id):
     """ Add a quantity of item to shopping cart """
 
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     cart = request.session.get('cart', {})
 
-    if item_id in list(cart.keys()):
-        cart[item_id] += quantity
+    if product_id in list(cart.keys()):
+        cart[product_id] += quantity
     else:
-        cart[item_id] = quantity
+        cart[product_id] = quantity
 
     request.session['cart'] = cart
     return redirect(redirect_url)
 
 
-def adjust_cart(request, item_id):
+def adjust_cart(request, product_id):
     """
     Adjust the quantity of product in the cart
     """
@@ -32,9 +32,10 @@ def adjust_cart(request, item_id):
     cart = request.session.get('cart', {})
 
     if quantity > 0:
-        cart[item_id] = quantity
+        cart[product_id] = quantity
     else:
-        cart.pop(item_id)
+        cart.pop(product_id)
 
     request.session['cart'] = cart
+    print(quantity)
     return redirect(reverse('view_cart'))

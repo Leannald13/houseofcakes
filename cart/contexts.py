@@ -11,16 +11,17 @@ def cart_contents(request):
     product_count = 0
     cart = request.session.get('cart', {})
 
-    for item_id, quantity in cart.items():
-        product = get_object_or_404(Product, pk=item_id)
+    for product_id, quantity in cart.items():
+        product = get_object_or_404(Product, pk=product_id)
         total += quantity * product.price
         product_count += quantity
         cart_items.append({
-            'item_id': item_id,
+            'product_id': product_id,
             'quantity': quantity,
             'product': product,
         })
-
+    # Printing out the cart_items list:
+    print(f"This is 'cart_items' after the for loop: {cart_items}")
     if total < settings.FREE_DELIVERY_THRESHOLD:
         delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
         free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total

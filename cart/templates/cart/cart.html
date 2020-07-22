@@ -26,12 +26,12 @@
   <div class="card cart-card" style="width: 25rem;">
   <div class="card-body">
     <p class="card-text"><img src="{{ item.product.image_url  }}" class="image-cart" style="justify-content:space-between;" alt="item.product.description"></p>
+    <p class="card-text cart3">{{ item.product.id }}</p>
     <p class="card-text cart3">£{{ item.product.price }}</p>
     <p class="card-text cart3">Quantity: {{ item.quantity }}</p>
      <form action="{% url 'adjust_cart' item.product.id %}" method="POST" class="form-group">
       {% csrf_token %}
-       <input type="number" class="form-control cart-input" name="quantity" min="0" max="5" 
-       placeholder="Amend Quantity" required>
+       <input type="number" class="form-control cart-input" name="quantity" min="0" max="5" placeholder="Amend Quantity" required>
         <button class="btn form-control amend-quantity-button" type="submit">Amend Quantity</button>
   </div>
 </div>
