@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="blankspace2"></div>
+
+<h2 class="cart-heading">Checkout</h2>
+
+<div class="row">
+<p>Please complete the information below</p>
+<form action="{% url 'checkout' %}" method="POST" id="payment-form">
+{% csrf_token %}
+  <fieldset class="rounded px-3 mb-5">
+  <p>Your Details</p>
+  {{ order_form.full_name}}
+   {{ order_form.email}}
+  </fieldset>
+  <fieldset class="rounded px-3 mb-5">
+  {{ order_form.phone_number }}
+  {{ order_form.country }}
+  {{ order_form.postcode }}
+  {{ order_form.town_or_city }}
+  {{ order_form.street_address1 }}
+  {{ order_form.street_address2 }}
+  {{ order_form.county }}
+  </fieldset>
+  <fieldset class="px-3"></fieldset>
+</form>
+</div>
+
+
+<div class="blankspace3"></div>
+{% endblock %}
+
