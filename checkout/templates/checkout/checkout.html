@@ -2,33 +2,64 @@
 {% load static %}
 
 {% block content %}
-<div class="blankspace2"></div>
-
+<div class="blankspace4"></div>
+<div class="checkout-background">
 <h2 class="cart-heading">Checkout</h2>
-
-<div class="row">
-<p>Please complete the information below</p>
 <form action="{% url 'checkout' %}" method="POST" id="payment-form">
 {% csrf_token %}
-  <fieldset class="rounded px-3 mb-5">
-  <p>Your Details</p>
-  {{ order_form.full_name}}
-   {{ order_form.email}}
-  </fieldset>
-  <fieldset class="rounded px-3 mb-5">
-  {{ order_form.phone_number }}
-  {{ order_form.country }}
-  {{ order_form.postcode }}
-  {{ order_form.town_or_city }}
-  {{ order_form.street_address1 }}
-  {{ order_form.street_address2 }}
-  {{ order_form.county }}
-  </fieldset>
-  <fieldset class="px-3"></fieldset>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+    <p>Your Details</p>
+    <fieldset>
+    {{ order_form.full_name|as_crispy_field }} 
+    </fieldset>
+    </div>
+    <div class="form-group col-md-6">
+      <fieldset>
+      {{ order_form.email|as_crispy_field }}
+      </fieldset>
+    </div>
+  </div>
+  <div class="form-group">
+    <fieldset>
+     {{ order_form.phone_number|as_crispy_field }}
+    </fieldset>
+  </div>
+  <div class="form-group">
+    <fieldset>
+    {{ order_form.street_address1|as_crispy_field }}
+    </fieldset>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+     <fieldset>
+     {{ order_form.street_address2|as_crispy_field }}
+     </fieldset>
+    </div>
+    <div class="form-group col-md-4">
+      <fieldset>
+     {{ order_form.town_or_city|as_crispy_field }}
+     </fieldset>
+    </div>
+    <div class="form-group col-md-2">
+      <fieldset>
+     {{ order_form.postcode|as_crispy_field }}
+     </fieldset>
+    </div>
+     <div class="form-group col-md-2">
+      <fieldset>
+     {{ order_form.county|as_crispy_field }}
+     </fieldset>
+    </div>
+    <div class="form-group col-md-2">
+      <fieldset>
+     {{ order_form.country|as_crispy_field }}
+     </fieldset>
+    </div>
+  <button type="submit" class="btn btn-primary">Sign in</button>
 </form>
 </div>
 
-
-<div class="blankspace3"></div>
+<div class="blankspace5"></div>
 {% endblock %}
 

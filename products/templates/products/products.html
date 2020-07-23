@@ -11,7 +11,7 @@
       <li class="cakeprice"> £{{ product.price }}</li>
       <form class="form-group" method="POST" action="{% url 'product_detail' product.id %}">
         {% csrf_token %}
-        <button class="btn btn-form-control more-button atc-btn" type="submit">Find Out More</button>
+        <button class="btn btn-form-control more-button" type="submit">Find Out More</button>
         </form>
         </ul> 
       </div>
