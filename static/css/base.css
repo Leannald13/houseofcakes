@@ -316,13 +316,13 @@ ul {
 
 .blankspace3 {
     height: 100px;
-    background-color: #fff;
+    background-color: #f2f7f7;
     width: 100%;
 }
 
 .blankspace2 {
     height: 200px;
-    background-color:#fff;
+    background-color: #f2f7f7;
     width: 100%;
 }
 
@@ -339,9 +339,12 @@ ul {
       font-size: 45px;
       text-align: center;
       color: #484848;
-      margin-bottom: 30px;
+      margin-bottom: 30px;    
 }
 
+.blankspace6 {
+    background-color: #f2f7f7;
+}
 
 @media(min-width: 967px) {
 .cart-subhead {
@@ -422,29 +425,102 @@ ul {
 }
 }
 
+.background-20 {
+    background-color: #f2f7f7;
+}
+
 ::placeholder {
     text-align: center;
 }
 
+
+/* checkout.html */
+
+
 .checkout-background {
-    background-color: #EEF0F2;
+    background-color: #f2f7f7;
     width: 100%;
+    color: #484848;
+    font-family: 'Rubik', sans-serif;
     
 }
 
 .blankspace4 {
     height: 200px;
-    background-color: #EEF0F2;
+    background-color: #f2f7f7;
     width: 100%;
 }
 
 .blankspace5 {
     height: 200px;
-    background-color:#EEF0F2;
+    background-color: #f2f7f7;
     width: 100%;
 }
 
+.order-summary {
+    font-weight: bold;
+}
+
+#payment-form {
+    width: 97%;
+    margin-top: 70px;
+    padding-left: 40px;
+} 
+
+
+.pay-now {
+    background-color: #D3D3D3;
+    color: #696969;
+    width: 150px;  
+}
+
+.pay-now:hover {
+    background-color:#C0C0C0;
+    color: #fff;
+    width: 150px;
+}
+
 /* media queries */
+
+@media (min-width: 1025px) {
+.pay-now {
+    background-color: #C0C0C0;
+    color: #696969;
+    width: 150px;
+    margin-left: 570px;
+}
+}
+
+@media (min-width: 1025px) {
+.pay-now:hover {
+    background-color: #808080;
+    color: #fff;
+    width: 150px;
+    margin-left: 570px;
+}
+}
+
+
+@media (min-width: 1025px) {
+.checkout-yourdetails {
+    margin-left: 600px;
+    margin-bottom: 20px;
+}
+}
+
+@media (min-wdith: 1025px) {
+.form-row {
+    margin-left: 200px;
+}
+}
+
+@media (min-width: 1025px) {
+.order-summary {
+    margin-left: 220px;
+
+}
+}
+
 
 @media (max-width: 768px) {
 .sub-head {

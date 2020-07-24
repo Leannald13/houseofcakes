@@ -2,36 +2,78 @@
 {% load static %}
 
 {% block content %}
+
 <div class="blankspace4"></div>
 <div class="checkout-background">
 <h2 class="cart-heading">Checkout</h2>
+<div class="row">
+    <div class="col-10">
+                <p class="text-center order-summary">Order Summary</p>
+                <div class="row">
+                    <div class="col-7 offset-2">
+                        <p class="mb-1">Item</p>
+                    </div>
+                    <div class="col-3 text-right">
+                        <p class="mb-1 mt-0 small text-muted">Subtotal</p>
+                    </div>
+                </div>
+{% for item in cart_items %}
+                    <div class="row">
+                        <div class="col-2 mb-1">
+                        </div>
+                        <div class="col-7">
+                            <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                            <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
+                        </div>
+                        <div class="col-3 text-right">
+                            <p class="my-0 text-muted">£{{ item.product.price }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+                <hr class="my-0">
+                <div class="row text-black text-right">
+                    <div class="col-7 offset-2">
+                        <p class="my-0">Order Total:</p>
+                        <p class="my-0">Delivery:</p>
+                        <p class="my-0">Grand Total:</p>
+                    </div>
+                    <div class="col-3">
+                        <p class="my-0">£{{ total | floatformat:2 }}</p>
+                        <p class="my-0">£{{ delivery | floatformat:2 }}</p>
+                        <p class="my-0"><strong>£{{ grand_total | floatformat:2 }}</strong></p>
+                    </div>
+                </div>
+            </div>
+
+
+
 <form action="{% url 'checkout' %}" method="POST" id="payment-form">
 {% csrf_token %}
-  <div class="form-row">
-    <div class="form-group col-md-6">
-    <p>Your Details</p>
+    <p class="checkout-yourdetails">Your Details</p>
+     <div class="form-row">
+    <div class="form-group col-md-4">
     <fieldset>
     {{ order_form.full_name|as_crispy_field }} 
     </fieldset>
     </div>
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-4">
       <fieldset>
       {{ order_form.email|as_crispy_field }}
       </fieldset>
     </div>
-  </div>
-  <div class="form-group">
+    <div class="form-group col-md-4">
     <fieldset>
      {{ order_form.phone_number|as_crispy_field }}
     </fieldset>
   </div>
-  <div class="form-group">
+  </div>
+  <div class="form-row">
+  <div class="form-group col-md-4">
     <fieldset>
     {{ order_form.street_address1|as_crispy_field }}
     </fieldset>
   </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-4">
      <fieldset>
      {{ order_form.street_address2|as_crispy_field }}
      </fieldset>
@@ -41,22 +83,25 @@
      {{ order_form.town_or_city|as_crispy_field }}
      </fieldset>
     </div>
-    <div class="form-group col-md-2">
+    </div>
+    <div class="form-row">
+    <div class="form-group col-md-4">
       <fieldset>
      {{ order_form.postcode|as_crispy_field }}
      </fieldset>
     </div>
-     <div class="form-group col-md-2">
+     <div class="form-group col-md-4">
       <fieldset>
      {{ order_form.county|as_crispy_field }}
      </fieldset>
     </div>
-    <div class="form-group col-md-2">
+    <div class="form-group col-md-4">
       <fieldset>
      {{ order_form.country|as_crispy_field }}
      </fieldset>
     </div>
-  <button type="submit" class="btn btn-primary">Sign in</button>
+    </div>
+  <button type="submit" class="btn pay-now">Pay Now</button>
 </form>
 </div>
 
