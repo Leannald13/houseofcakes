@@ -316,13 +316,13 @@ ul {
 
 .blankspace3 {
     height: 100px;
-    background-color: #f2f7f7;
+    background-color: #fff;
     width: 100%;
 }
 
 .blankspace2 {
     height: 200px;
-    background-color: #f2f7f7;
+    background-color: #fff;
     width: 100%;
 }
 
@@ -342,9 +342,6 @@ ul {
       margin-bottom: 30px;    
 }
 
-.blankspace6 {
-    background-color: #f2f7f7;
-}
 
 @media(min-width: 967px) {
 .cart-subhead {
@@ -425,10 +422,6 @@ ul {
 }
 }
 
-.background-20 {
-    background-color: #f2f7f7;
-}
-
 ::placeholder {
     text-align: center;
 }
@@ -441,8 +434,7 @@ ul {
     background-color: #f2f7f7;
     width: 100%;
     color: #484848;
-    font-family: 'Rubik', sans-serif;
-    
+    font-family: 'Rubik', sans-serif;  
 }
 
 .blankspace4 {
@@ -461,12 +453,6 @@ ul {
     font-weight: bold;
 }
 
-#payment-form {
-    width: 97%;
-    margin-top: 70px;
-    padding-left: 40px;
-} 
-
 
 .pay-now {
     background-color: #D3D3D3;
@@ -481,6 +467,7 @@ ul {
 }
 
 /* media queries */
+
 
 @media (min-width: 1025px) {
 .pay-now {
@@ -500,10 +487,50 @@ ul {
 }
 }
 
+@media(max-width: 767px) {
+.pay-now {
+    background-color: #D3D3D3;
+    color: #696969;
+    width: 150px;  
+    margin-left: 110px;
+}
+}
+
+@media(max-width: 767px) {
+.pay-now:hover {
+    background-color:#C0C0C0;
+    color: #fff;
+    width: 150px;
+    margin-left: 110px;
+}
+}
+
+@media(min-width: 1025px) {
+#payment-form {
+    width: 97%;
+    margin-top: 70px;
+    padding-left: 40px;
+} 
+}
+
+@media(max-width: 767px) {
+#payment-form {
+    width: 90%;
+    margin-top: 70px;
+    padding-left: 40px;
+} 
+}
 
 @media (min-width: 1025px) {
 .checkout-yourdetails {
     margin-left: 600px;
+    margin-bottom: 20px;
+}
+}
+
+@media (max-width: 767px) {
+.checkout-yourdetails {
+    margin-left: 140px;
     margin-bottom: 20px;
 }
 }
@@ -514,6 +541,7 @@ ul {
 }
 }
 
+
 @media (min-width: 1025px) {
 .order-summary {
     margin-left: 220px;
@@ -521,6 +549,13 @@ ul {
 }
 }
 
+@media(max-width: 767px) {
+.order-summary {
+   margin-left: 100px; 
+   margin-top: 30px;
+   margin-bottom: 30px;
+}
+}
 
 @media (max-width: 768px) {
 .sub-head {
