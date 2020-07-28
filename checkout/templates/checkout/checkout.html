@@ -1,7 +1,12 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
 {% block content %}
+
 
 <div class="blankspace4"></div>
 <div class="checkout-background">
@@ -44,8 +49,6 @@
                     </div>
                 </div>
             </div>
-    
-
 <form action="{% url 'checkout' %}" method="POST" id="payment-form">
 {% csrf_token %}
     <p class="checkout-yourdetails">Your Details</p>
@@ -104,16 +107,16 @@
 </form>
 </div>
 
- <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
-<div class="mb-3" id="card-element"></div>
-
+<h5 class="small text-black px-2 w-auto">Payment</h5>
+<div id="card-element"></div>
 <div class="blankspace5"></div>
- 
-{% endblock %}
 
+
+{% endblock %}
+ 
 
 {% block postloadjs %}
-{{ stripe_public_key|json_script:"id_stripe_public_key" }}
+ {{ stripe_public_key|json_script:"id_stripe_public_key" }}
  {{ client_secret|json_script:"id_client_secret" }}
  <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
-{% endblock %}
+{% endblock %} 
