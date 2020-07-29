@@ -20,9 +20,8 @@ var style = {
 var card = elements.create('card', {style: style});
 card.mount('#card-element');
 
-var card = elements.create('card', {style: style});
-card.mount('#card-element');
- 
+
+// handle form submit 
 var form = document.getElementById('payment-form');
 
 form.addEventListener('submit', function(ev) {

@@ -1,8 +1,9 @@
 
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.conf import settings
-from .forms import OrderForm
+from .forms import OrderForm, Order
+from products.models import Product
 from cart.contexts import cart_contents
 
 import stripe
@@ -11,6 +12,36 @@ import stripe
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
+
+    if request.method == 'POST':
+        cart = request.session.get('cart', {})
+
+        form_data = {
+            'full_name': request.POST['full_name'],
+            'email': request.POST['email'],
+            'phone_number': request.POST['phone_number'],
+            'country': request.POST['country'],
+            'postcode': request.POST['postcode'],
+            'town_or_city': request.POST['town_or_city'],
+            'street_address1': request.POST['street_address1'],
+            'street_address2': request.POST['street_address2'],
+            'county': request.POST['county'],
+        }
+        order_form = OrderForm(form_data)
+        if order_form.is_valid():
+            order = order_form.save()
+
+        for product_id, quantity in cart.items():
+            product = get_object_or_404(Product, pk=product_id)
+            total += quantity * product.price
+            product_count += quantity
+            cart_items.append({
+                'product_id': product_id,
+                'quantity': quantity,
+                'product': product,
+            })
+            cart_items.save()
+        return redirect(reverse('checkout_approved', args=[order.cart_items]))
 
     cart = request.session.get('cart', {})
     if not cart:
@@ -40,18 +71,22 @@ def checkout(request):
         'stripe_public_key': stripe_public_key,
         'client_secret': intent.client_secret,
     }
+    cart = request.session.get('cart', {})
 
     return render(request, template, context)
 
 
-def checkout_approved(request):
+def checkout_approved(request, cart_items):
 
-    messages.success(request, f'Order has successfully processed!')
+    order = get_object_or_404(Order, cart_items=cart_items)
+    messages.success(request, f'Order successfully processed!')
 
     if 'cart' in request.session:
         del request.session['cart']
 
-    template = 'checkout/checkout_approved.html'
-    
-    return render(request, template)
+    template = 'checkout/checkout_success.html'
+    context = {
+        'order': order,
+    }
 
+    return render(request, template, context)
