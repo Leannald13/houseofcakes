@@ -1,3 +1,4 @@
+
 from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 from django.conf import settings
@@ -41,3 +42,16 @@ def checkout(request):
     }
 
     return render(request, template, context)
+
+
+def checkout_approved(request):
+
+    messages.success(request, f'Order has successfully processed!')
+
+    if 'cart' in request.session:
+        del request.session['cart']
+
+    template = 'checkout/checkout_approved.html'
+    
+    return render(request, template)
+
