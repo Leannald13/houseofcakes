@@ -27,3 +27,14 @@ class Order(models.Model):
 
 def __str__(self):
     return self.full_name
+
+
+
+class OrderLineItem(models.Model):
+    """ Model for storing each item of the Order """
+    order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
+    quantity = models.IntegerField(null=False, blank=False, default=0)
+
+    def __str__(self):
+        return (order)

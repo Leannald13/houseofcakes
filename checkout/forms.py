@@ -1,5 +1,6 @@
 from django import forms
 from .models import Order
+import datetime
 
 
 class OrderForm(forms.ModelForm):
@@ -38,3 +39,54 @@ class OrderForm(forms.ModelForm):
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
             self.fields[field].label = False
 
+
+class MakePaymentForm(forms.Form):
+    """
+    Create form for payments via stripe
+    """
+
+    MONTH_CHOICES = [(i, i) for i in range(1, 13)]
+    YEAR_CHOICES = [(i, i) for i in range(2020, 2036)]
+
+    credit_card_number = forms.CharField(
+        min_length=16,
+        max_length=16,
+        required=False,
+        label="",
+        widget=forms.TextInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'Credit Card Number'
+        })
+    )
+
+    cvv = forms.CharField(
+        required=False,
+        label="",
+        widget=forms.NumberInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'CVV',
+            'required': 'True',
+        })
+    )
+
+    expiry_month = forms.ChoiceField(
+        choices=MONTH_CHOICES,
+        required=False,
+        label="",
+        widget=forms.Select(attrs={
+            'class': 'form-control',
+        })
+    )
+
+    expiry_year = forms.ChoiceField(
+        choices=YEAR_CHOICES,
+        required=False,
+        label="",
+        widget=forms.Select(attrs={
+            'class': 'form-control',
+        })
+    )
+
+    stripe_id = forms.CharField(
+        widget=forms.HiddenInput
+    )

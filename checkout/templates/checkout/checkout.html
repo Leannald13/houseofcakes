@@ -107,8 +107,11 @@
   <div class="form-group col-md-6 mb-0">
               <input id="submit_payment_btn" name="commit" class="btn btn-black-sm" type="submit" value="Place order">
             </div>
-</form>
-</div>
+    </form>
+    </div>
+ </div>
+
+
 
 <div class="blankspace5"></div>
 
@@ -117,6 +120,7 @@
  
 
 {% block postloadjs %}
+ {{ block.super }}
  {{ stripe_public_key|json_script:"id_stripe_public_key" }}
  {{ client_secret|json_script:"id_client_secret" }}
  <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>

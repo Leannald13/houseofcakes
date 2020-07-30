@@ -1,92 +1,74 @@
-
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse, redirect
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from django.conf import settings
-from .forms import OrderForm, Order
+from .forms import MakePaymentForm, OrderForm
+from .models import OrderLineItem
 from products.models import Product
-from cart.contexts import cart_contents
-
+from django.conf import settings
+from django.utils import timezone
 import stripe
 
+# Create your views here.
 
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
-    if request.method == 'POST':
-        cart = request.session.get('cart', {})
+    if request.method == "POST":
+        order_form = OrderForm(request.POST)
+        payment_form = MakePaymentForm(request.POST)
 
-        form_data = {
-            'full_name': request.POST['full_name'],
-            'email': request.POST['email'],
-            'phone_number': request.POST['phone_number'],
-            'country': request.POST['country'],
-            'postcode': request.POST['postcode'],
-            'town_or_city': request.POST['town_or_city'],
-            'street_address1': request.POST['street_address1'],
-            'street_address2': request.POST['street_address2'],
-            'county': request.POST['county'],
-        }
-        order_form = OrderForm(form_data)
-        if order_form.is_valid():
-            order = order_form.save()
+        if order_form.is_valid() and payment_form.is_valid():
+            order = order_form.save(commit=False)
+            order.date = timezone.now()
+            order.save()
 
-        for product_id, quantity in cart.items():
-            product = get_object_or_404(Product, pk=product_id)
-            total += quantity * product.price
-            product_count += quantity
-            cart_items.append({
-                'product_id': product_id,
-                'quantity': quantity,
-                'product': product,
-            })
-            cart_items.save()
-        return redirect(reverse('checkout_approved', args=[order.cart_items]))
+            cart = request.session.get('cart', {})
 
-    cart = request.session.get('cart', {})
-    if not cart:
-        messages.error(request, "There's nothing in your bag at the moment")
-        return redirect(reverse('products'))
+            total = 0
+            for id, quantity in cart.items():
+                product = get_object_or_404(Product, pk=id)
+                total += quantity * product.price
+                order_line_item = OrderLineItem(
+                    order=order,
+                    product=product,
+                    quantity=quantity
+            )
 
-    current_cart = cart_contents(request)
-    total = current_cart['grand_total']
-    stripe_total = round(total * 100)
-    stripe.api_key = stripe_secret_key
-    intent = stripe.PaymentIntent.create(
-        amount=stripe_total,
-        currency=settings.STRIPE_CURRENCY,
-    )
+                order_line_item.save()
 
-    print(intent)
+                order_line_item = OrderLineItem(
+                    order=order,
+                    product=product,
+                    quantity=quantity
+                    )
+                order_line_item.save()
 
-    order_form = OrderForm()
+            try:
+                customer = stripe.Charge.create(
+                    amount=int(total * 100),
+                    currency="GBP",
+                    description=request.user.email,
+                    card=payment_form.cleaned_data['stripe_id'],
+                )
+            except stripe.error.CardError:
+                messages.error(request, "Your card has been declined!")
+ 
+            if customer.paid:
+                messages.error(request, "You have successfully paid!")
+                request.session['cart'] = {}
+                return redirect(reverse('home'))
+            else:
+                messages.error(request, "Unable to take payment!")
+        else:
+            payment_form = MakePaymentForm()
+            order_form = OrderForm()
 
-    if not stripe_public_key:
-        messages.warning(request, 'Stripe public key is missing. \
-            Did you forget to set it in your environment?')
-
-    template = 'checkout/checkout.html'
     context = {
-        'order_form': order_form,
-        'stripe_public_key': stripe_public_key,
-        'client_secret': intent.client_secret,
-    }
-    cart = request.session.get('cart', {})
-
-    return render(request, template, context)
-
-
-def checkout_approved(request, cart_items):
-
-    order = get_object_or_404(Order, cart_items=cart_items)
-    messages.success(request, f'Order successfully processed!')
-
-    if 'cart' in request.session:
-        del request.session['cart']
-
-    template = 'checkout/checkout_success.html'
-    context = {
-        'order': order,
+        'order_form': OrderForm,
+        'payment_form': MakePaymentForm,
+        'stripe_public_key': stripe_public_key
     }
 
-    return render(request, template, context)
+    return render(request, 'checkout/checkout.html', context)
+
