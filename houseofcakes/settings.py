@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+# if os.path.exists("env.py"):
+#     import env
+import env
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -38,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'django_forms_bootstrap',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -166,6 +170,7 @@ STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
 FREE_DELIVERY_THRESHOLD = 50
 STANDARD_DELIVERY_PERCENTAGE = 10
 STRIPE_CURRENCY = 'usd'
-STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
-STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
+STRIPE_PUBLISHABLE = os.getenv("STRIPE_PUBLISHABLE", "PUBSLISHABLE KEY not found")
+STRIPE_SECRET = os.getenv("STRIPE_SECRET", "SECRET KEY not found")
+
 

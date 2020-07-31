@@ -1,5 +1,4 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
-from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import MakePaymentForm, OrderForm
 from .models import OrderLineItem
@@ -10,10 +9,10 @@ import stripe
 
 # Create your views here.
 
-def checkout(request):
-    stripe_public_key = settings.STRIPE_PUBLIC_KEY
-    stripe_secret_key = settings.STRIPE_SECRET_KEY
+stripe.api_key = settings.STRIPE_SECRET
 
+def checkout(request):
+    
     if request.method == "POST":
         order_form = OrderForm(request.POST)
         payment_form = MakePaymentForm(request.POST)
@@ -33,22 +32,15 @@ def checkout(request):
                     order=order,
                     product=product,
                     quantity=quantity
-            )
+                )
 
-                order_line_item.save()
-
-                order_line_item = OrderLineItem(
-                    order=order,
-                    product=product,
-                    quantity=quantity
-                    )
                 order_line_item.save()
 
             try:
                 customer = stripe.Charge.create(
                     amount=int(total * 100),
                     currency="GBP",
-                    description=request.user.email,
+                    description=order_form.cleaned_data['email'],
                     card=payment_form.cleaned_data['stripe_id'],
                 )
             except stripe.error.CardError:
@@ -61,14 +53,10 @@ def checkout(request):
             else:
                 messages.error(request, "Unable to take payment!")
         else:
-            payment_form = MakePaymentForm()
-            order_form = OrderForm()
+            messages.error(request, "Unable to take payment with that card!")
+    else:
+        payment_form = MakePaymentForm()
+        order_form = OrderForm()
 
-    context = {
-        'order_form': OrderForm,
-        'payment_form': MakePaymentForm,
-        'stripe_public_key': stripe_public_key
-    }
-
-    return render(request, 'checkout/checkout.html', context)
+    return render(request, "checkout/checkout.html", {"payment_form": payment_form, "order_form": order_form, "publishable": settings.STRIPE_PUBLISHABLE})
 
