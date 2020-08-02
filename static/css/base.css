@@ -248,6 +248,11 @@ ul {
 
 /* product details */
 
+.blankspace7 {
+    background-color: white;
+    height: 80px;
+}
+
 @media (min-width: 968px) {
 .product-background {
     background-color: #EEF0F2;
@@ -256,7 +261,8 @@ ul {
     border-color: #A9A9A9;
     border-style: solid;
     border-radius: 10px;
-    margin-left: 100px;
+    margin-left: 80px;
+    margin-top: 30px;
 }
 }
 
@@ -293,46 +299,92 @@ ul {
     margin-top: 20px;
 } 
 
-#backbutton {
-    margin-left: 327px;
-    width: 107px;
+.button-detail {
+    margin-left: 120px;
+    margin-top: 30px;
+    padding-top: 8px;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    background-color: #D3D3D3;
+    font-family: 'Rubik', sans-serif;
+    color: #696969;
+    border: none;
+}
+
+.button-detail:hover {
+    margin-left: 120px;
+    margin-top: 30px;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    background-color: #C0C0C0;
+    color: #696969;
+    border: none;
+    font-family: 'Rubik', sans-serif;
+}
+
+.button-add {
+    margin-left: 20px;
+    margin-top: 30px;
+    width: 150px;
+    height: 40px;
     text-align: center;
     background-color: #D3D3D3;
     color: #696969;
     border: none;
+    font-weight: bold;
+    font-family: 'Rubik', sans-serif;
 }
 
-#backbutton:hover {
-    margin-left: 327px;
-    width: 107px;
+.button-add:hover {
+    margin-left: 20px;
+    margin-top: 30px;
+    width: 150px;
+    height: 40px;
     text-align: center;
     background-color: #C0C0C0;
     color: #696969;
     border: none;
+    font-weight: bold;
+    font-family: 'Rubik', sans-serif;
 }
 
-.addtocart-button {
-    margin-left: 327px;
-    margin-top: 25px;
-    background-color: #C0C0C0;
-    color: #696969;
-    
-}
-
-.addtocart-button:hover {
-    margin-left: 327px;
-    margin-top: 25px;
-    background-color: #A9A9A9;
-    color: #696969;
-   
-}
-
-.addtocart-item {
-    width: 120px;
+.button-checkout {
+    margin-left: 20px;
+    margin-top: 30px;
+    width: 150px;
+    height: 40px;
     text-align: center;
-    margin-left: 320px;
+    background-color: #a0c2e7;
+    color: #696969;
+    border: none;
+    font-weight: bold;
+    font-family: 'Rubik', sans-serif;
 }
 
+.button-checkout:hover {
+    margin-left: 20px;
+    margin-top: 30px;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    background-color: #8caee2;
+    color: #696969;
+    border: none;
+    font-weight: bold;
+    font-family: 'Rubik', sans-serif;
+}
+
+.qty_input {
+    margin-left: 300px;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    color: #484848;
+    font-family: 'Rubik', sans-serif;
+    border: none;
+}
 
 /* cart.html */
 
