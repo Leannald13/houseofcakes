@@ -253,7 +253,7 @@ ul {
     height: 80px;
 }
 
-@media (min-width: 968px) {
+@media (min-width: 1024px) {
 .product-background {
     background-color: #EEF0F2;
     height: 500px;
@@ -266,6 +266,7 @@ ul {
 }
 }
 
+@media(min-width: 1024px) {
 .product-detail-image {
     width: 300px;
     height: 300px;
@@ -273,6 +274,18 @@ ul {
     margin-top: 50px;
     display: inline-block;
 }
+}
+
+@media(min-width: 768px) and (max-width: 1023px) {
+.product-detail-image {
+    width: 200px;
+    height: 200px;
+    margin-left: 230px;
+    margin-top: 80px;
+    display: inline-block;
+}
+}
+
 
 .product-detail-name {
     text-align: center;
@@ -298,6 +311,98 @@ ul {
     font-family: 'Rubik', sans-serif;
     margin-top: 20px;
 } 
+
+@media (min-width: 769px) and (max-width: 1024px) {
+span .navbar-toggler-icon {
+    margin-right: 100px !important;
+    float: left;
+}
+}
+
+
+@media (max-width: 767px) {
+.product-detail-image {
+    width: 250px !important;
+    height: 300px !important;
+    margin-top: 20px;
+}
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+.product-detail-image {
+    background-color: #EEF0F2;
+    width: 300px !important;
+    height: 200px;
+    margin-top: 20px;
+    margin-left: 180px;
+}
+}
+
+@media (max-width: 767px) {
+.product-detail-name {
+    text-align: center;
+    font-size: 20px;
+    margin-right: 60px;
+    margin-top: 20px;
+}
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+.product-detail-name {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-right: 100px;
+}
+}
+
+@media (max-width: 767px) {
+.product-detail-price {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-right: 50px;
+}
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+.product-detail-price {
+    text-align: center;
+    font-size: 25px;
+    margin-top: 10px;
+    margin-right: 100px;
+    
+}
+}
+
+@media (max-width: 767px) {
+.product-detail-description {
+    text-align: center;
+    font-size: 18px;
+    margin-right: 100px;
+    margin-left: 40px;
+    margin-top: 10px;
+}
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+.product-detail-description {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 10px;
+    padding-left: 60px;
+    padding-right: 100px;
+    margin-right: 80px;
+}
+}
+
+@media (max-width: 767px) {
+.product-detail-description {
+    text-align: center;
+    font-size: 12px;
+    margin-right: 30px;
+    margin-top: 10px;
+}
+}
 
 .button-detail {
     margin-left: 120px;
@@ -566,6 +671,8 @@ ul {
 
 .StripeElement--webkit-autofill {
   background-color: #fefde5 !important;
+
+}
 
 /* media queries */
 
@@ -845,185 +952,13 @@ ul {
 }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
-span .navbar-toggler-icon {
-    margin-right: 100px !important;
-    float: left;
-}
-}
 
-
-@media (max-width: 767px) {
-.product-detail-image {
-    background-color: #EEF0F2;
-    width: 250px;
-    height: 300px;
-    margin-top: 20px;
-}
-}
-@media (min-width: 768px) and (max-width: 1024px) {
-.product-detail-image {
-    background-color: #EEF0F2;
-    width: 400px !important;
-    height: 300px;
-    margin-top: 20px;
-    margin-left: 180px;
-}
-}
-
-@media (max-width: 767px) {
-.product-detail-name {
-    text-align: center;
-    font-size: 20px;
-    margin-right: 60px;
-    margin-top: 20px;
-}
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-.product-detail-name {
-    text-align: center;
-    font-size: 30px;
-    margin-left: 20px;
-    margin-top: 20px;
-}
-}
-
-@media (max-width: 767px) {
-.product-detail-price {
-    text-align: center;
-    font-size: 20px;
-    margin-top: 10px;
-    margin-right: 50px;
-}
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-.product-detail-price {
-    text-align: center;
-    font-size: 25px;
-    margin-top: 10px;
-    margin-left: 20px;
-    
-}
-}
-
-@media (max-width: 767px) {
-.product-description {
-    text-align: center;
-    font-size: 18px;
-    margin-right: 100px;
-    margin-left: 40px;
-    margin-top: 10px;
-}
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-.product-description {
-    text-align: center;
-    font-size: 25px;
-    margin-top: 10px;
-    padding-left: 40px;
-    padding-right: 40px;
-}
-}
-
-@media (max-width: 767px) {
-.product-detail-description {
-    text-align: center;
-    font-size: 12px;
-    margin-right: 30px;
-    margin-top: 10px;
-}
-}
 
 @media (max-width: 767px) {
 .product-details {
     margin: 0;
 }
 }
-
-@media (max-width: 767px) {
-#backbutton {
-    margin-left: 100px;
-    width: 107px;
-    text-align: center;
-    background-color: #D3D3D3;
-    color: #696969;
-    border: none;
-}
-}
-
-@media (max-width: 767px) {
-#backbutton:hover {
-    margin-left: 100px;
-    width: 107px;
-    text-align: center;
-    background-color: #C0C0C0;
-    color: #696969;
-    border: none;
-}
-}
-
-@media (max-width: 767px) {
-.addtocart-button {
-    margin-left: 100px;
-    margin-top: 25px;
-    background-color: #C0C0C0;
-    color: #696969;   
-}
-}
-
-@media (max-width: 767px) {
-.addtocart-button:hover {
-    margin-left: 100px;
-    margin-top: 25px;
-    background-color: #A9A9A9;
-    color: #696969;
-   
-}
-}
-
-@media(max-width: 767px) {
-.addtocart-item {
-    width: 120px;
-    text-align: center;
-    margin-left: 100px;
-
-}
-}
-
-@media (max-width: 767px) {
-.more-button {
-    margin-left: 60px;
-    margin-top: 25px;
-    background-color: #D3D3D3;
-    color: #696969;
-}
-}
-
-@media (max-width: 767px) {
-.more-button:hover {
-    margin-left: 60px;
-    margin-top: 25px;
-    background-color: #C0C0C0;
-    color: #696969;
-}
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-.more-button {
-    margin-left: 50px;
-    margin-top: 25px;
-    background-color: #D3D3D3;
-    color: #696969;
-}
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-.more-button:hover {
-    margin-left: 50px;
-    margin-top: 25px;
     background-color: #C0C0C0;
     color: #696969;
 }
@@ -1035,7 +970,7 @@ span .navbar-toggler-icon {
     height: 100px;
     margin-left: 70px !important;
 
-}
+{}_   nknknkn}
 }
 
 @media (max-width: 767px) {
