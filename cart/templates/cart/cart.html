@@ -28,7 +28,7 @@
             <strong class="total">Total:</strong>
             <strong class="total"><span aria-hidden="true">£</span>{{ total }}</strong>
             {% if total > 0 %}
-                <a class="btn checkout-button" href="#" role="button">Checkout</a>
+                <a class="btn checkout-button" href="{% url 'checkout' %}" role="button">Checkout</a>
             {% else %}
                 <p>Your cart is now empty. Return to <a class="return-button" href="">store</a>.</p>
             {% endif %}
