@@ -21,7 +21,6 @@ def contact(request):
                 contact_title=request.POST['contact_title'],
                 contact_body=request.POST['contact_body'],
                 email=request.POST['email'],
-                query_user=request.user
             )
 
             form.save()
@@ -35,16 +34,8 @@ def contact(request):
 
             form.save()
 
-        send_mail(
-            'New enquiry from JBP',
-            'You have a new message. See admin panel for details.',
-            os.environ.get('SITE_EMAIL'),
-            [ADMINS_EMAIL],
-            fail_silently=False,
-        )
-
-        messages.success(request, 'Your enquiry has been submitted, I will get back to you shortly.')
-        return redirect('index')
+        messages.success(request, 'Your enquiry has been submitted, we will get back to you shortly.')
+        return redirect('home')
 
     else:
         if request.user.is_authenticated:
