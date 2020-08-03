@@ -14,6 +14,7 @@ import os
 # if os.path.exists("env.py"):
 #     import env
 import env
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -49,6 +50,7 @@ INSTALLED_APPS = [
     'products',
     'cart',
     'checkout',
+    'contact',
     # Other
     'crispy_forms',
 ]
@@ -119,12 +121,17 @@ WSGI_APPLICATION = 'houseofcakes.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# DATABASES = {
+#   'default': {
+#      'ENGINE': 'django.db.backends.sqlite3',
+#     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+# }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'default': dj_database_url.parse('postgres://fnatlnqrmtjshj:9be3f1385aaf1420df0172ebda4d4154bc9101cec1aaa2cd4faa67d27a464dce@ec2-54-75-229-28.eu-west-1.compute.amazonaws.com:5432/d6olhgu29clon1')
+
     }
-}
 
 
 # Password validation
