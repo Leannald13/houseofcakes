@@ -121,17 +121,19 @@ WSGI_APPLICATION = 'houseofcakes.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-# DATABASES = {
-#   'default': {
-#      'ENGINE': 'django.db.backends.sqlite3',
-#     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-# }
-# }
-
-DATABASES = {
-        'default': dj_database_url.parse('postgres://fnatlnqrmtjshj:9be3f1385aaf1420df0172ebda4d4154bc9101cec1aaa2cd4faa67d27a464dce@ec2-54-75-229-28.eu-west-1.compute.amazonaws.com:5432/d6olhgu29clon1')
-
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+
+
 
 
 # Password validation
