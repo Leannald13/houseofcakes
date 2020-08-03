@@ -3,9 +3,6 @@ from .models import Contact
 
 
 class ContactForm(forms.ModelForm):
-    """Create a model form with a meta class for the contact form. All fields should be required. Additionally
-    they should all have no labels for a cleaner UI and pass through a placeholder and form-control class."""
-
     # Create Meta Class
     class Meta:
         model = Contact

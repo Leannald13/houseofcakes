@@ -5,37 +5,34 @@
 {% block content %}
 
 <div class="blankspace4"></div>
-<section class="container login-body">
+<div class="contact-background">
+<section class="container">
     <div class="row gallery-text">
         <div class="col-12">
-            <p>Welcome to the contact page. This is the place to get in touch with me for any queries you might have.
-            I will do my best to get back to you as soon as possible.</p>
-            <p>Please leave a query title and your message as well as your email address below to help me respond
-            appropriately.</p>
+            <p class="contact-heading">If you are interested in hearing more about our delicious cakes, or if you are looking
+            to place a large order, please don't hesitate to get in touch.</p>
         </div>
     </div>
-    <div class="row contact-row">
+    <div class="row contact-box">
         <div class="col-md-6 mx-auto">
             <div class="card">
                 <div class="card-header user-card-header">
-                    <h5>Contact</h5>
+                    <h5 class="contact-heading2">Contact</h5>
                 </div>
-                <div class="card-body user-card-body">
-                   
+                <div class="card-body">  
                     <form action="{% url 'contact' %}" method="POST">
-                      
                         {% csrf_token %}
                         <div class="form-group">
-                        
                             {{ form }}
                         </div>
-                        <input type="submit" value="Submit" class="btn btn-block user-button">
+                        <input type="submit" value="Submit" class="btn btn-block button-contact">
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </section>
+</div>
 
 <div class="blankspace5"></div>
 

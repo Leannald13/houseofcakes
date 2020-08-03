@@ -603,6 +603,7 @@ span .navbar-toggler-icon {
 
 ::placeholder {
     text-align: center;
+    font-family: 'Rubik', sans-serif;
 }
 
 
@@ -647,15 +648,11 @@ span .navbar-toggler-icon {
 
 .StripeElement {
   box-sizing: border-box;
-
   height: 40px;
-
   padding: 10px 12px;
-
   border: 1px solid transparent;
   border-radius: 4px;
   background-color: white;
-
   box-shadow: 0 1px 3px 0 #e6ebf1;
   -webkit-transition: box-shadow 150ms ease;
   transition: box-shadow 150ms ease;
@@ -673,6 +670,55 @@ span .navbar-toggler-icon {
   background-color: #fefde5 !important;
 
 }
+
+/* contact.html */
+
+.contact-background {
+     background-color: #f2f7f7;
+}
+
+.contact-heading {
+    color: #696969;
+    font-family: 'Rubik', sans-serif;  
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+
+}
+
+.contact-heading2 {
+    color: #696969;
+    font-family: 'Rubik', sans-serif;  
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+
+}
+
+.button-contact {
+    margin-top: 20px;
+    height: 40px;
+    text-align: center;
+    background-color: #a0c2e7;
+    color: #696969;
+    border: none;
+    font-weight: bold;
+    font-family: 'Rubik', sans-serif;
+}
+
+.button-contact:hover {
+    margin-top: 20px;
+    height: 40px;
+    text-align: center;
+    background-color: #8caee2;
+    color: #696969;
+    border: none;
+    font-weight: bold;
+    font-family: 'Rubik', sans-serif;
+}
+
 
 /* media queries */
 
