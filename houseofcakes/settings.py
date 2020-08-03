@@ -29,7 +29,7 @@ SECRET_KEY = '2$b8p9mmed6g21o06n+6c4da6=^b3fm8o73o*n@n&$5t)zd0_y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['houseofcakes.herokuapp.com', 'localhost']
 
 
 # Application definition
