@@ -34,7 +34,7 @@ ALLOWED_HOSTS = ['houseofcakes.herokuapp.com', 'localhost']
 
 # Application definition
 
-INSTALLED_APPS = [        
+INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -51,10 +51,10 @@ INSTALLED_APPS = [
     'cart',
     'checkout',
     'contact',
-    'accounts',
     # Other
     'crispy_forms',
     'storages',
+
 ]
 
 MIDDLEWARE = [
