@@ -688,7 +688,7 @@ span .navbar-toggler-icon {
 }
 
 .blankspace4 {
-    height: 200px;
+    height: 170px;
     background-color: #f2f7f7;
     width: 100%;
 }
@@ -704,41 +704,53 @@ span .navbar-toggler-icon {
 }
 
 
-.pay-now {
+#pay-now {
     background-color: #D3D3D3;
     color: #696969;
     width: 150px;  
+    border: none;
 }
 
-.pay-now:hover {
+#pay-now:hover {
     background-color:#C0C0C0;
     color: #fff;
     width: 150px;
+    border: none;
 }
 
-.StripeElement {
-  box-sizing: border-box;
-  height: 40px;
-  padding: 10px 12px;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  background-color: white;
-  box-shadow: 0 1px 3px 0 #e6ebf1;
-  -webkit-transition: box-shadow 150ms ease;
-  transition: box-shadow 150ms ease;
+.pay-now {
+    margin-left: 660px;
 }
 
-.StripeElement--focus {
-  box-shadow: 0 1px 3px 0 #cfd7df;
+.delivery-address {
+    margin-left: 370px;
 }
 
-.StripeElement--invalid {
-  border-color: #fa755a;
+.payment-info {
+    margin-left: 500px;
 }
 
-.StripeElement--webkit-autofill {
-  background-color: #fefde5 !important;
+.delivery-address-title {
+    text-align: center;
+    margin-top: 100px;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
 
+.payment-info-title {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.checkout-heading {
+      font-family: 'Satisfy', cursive;
+      font-size: 55px;
+      text-align: center;
+      color: #484848;
+      margin-bottom: 30px;
+      padding-top: 40px;    
 }
 
 /* contact.html */

@@ -20,7 +20,7 @@
 
 <div class="blankspace4"></div>
 <div class="checkout-background">
-<h2 class="cart-heading">Checkout</h2>
+<h2 class="checkout-heading">Checkout</h2>
 <div class="row">
     <div class="col-12">
         <div id="credit-card-errors" style="display:none; color: red;">
@@ -70,22 +70,22 @@
     <form role="form" method="POST" action="{% url 'checkout' %}" id="payment-form">
         <div class="row">
           {% csrf_token %}
-          <div class="form-group col-md-offset-1 col-md-4">
-            <legend>Delivery Address</legend>
+          <div class="form-group col-lg-6 delivery-address">
+            <p class="delivery-address-title">Delivery Address</p>
             {{ order_form | as_bootstrap}}
             
               <label for="order-email">Email</label>
-              <input name="order-email" type="email" class="form-control" id="order-email" />
+              <input name="order-email" type="email" class="form-control" id="order" />
           
           </div>
-          <div class="form-group col-md-offset-2 col-md-4">
-            <legend>Payment Information</legend>
+          <div class="form-group col-lg-4 payment-info">
+            <p class="payment-info-title">Payment Information</p>
             {{ payment_form | as_bootstrap }}
           </div>
         </div>
         <div class="row">
-          <div class="col-md-offset-2 col-md-8">
-            <input class="btn btn-block btn-lg btn-info" id="submit_payment_btn" type="submit" name="commit" value="Place Order" />
+          <div class="pay-now">
+            <input class="btn btn-block btn-lg btn-info" id="pay-now" type="submit" name="commit" value="Pay Now" />
           </div>
         </div>
       </form>
