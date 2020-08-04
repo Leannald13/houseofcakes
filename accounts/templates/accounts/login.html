@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap_tags %}
+
+{% block content %}
+
+<div class="blankspace9"></div>
+<section class="container login-body">
+    <div class="row">
+        <div class="col-12 reg-login">
+            <p>Dont have an account? You can register <a class="coloured-links" href="{% url 'register' %}">here</a></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card">
+                <div class="card-header user-card-header">
+                    <h5>Login</h5>
+                </div>
+                <div class="card-body user-card-body">
+                   
+                    <form action="{% url 'login' %}" method="POST">
+                     {% csrf_token %}
+                        <div class="form-group">
+                            <!-- Pass through form from login view -->
+                            {{  form }}
+                        </div>
+                        <input type="submit" value="Login" class="btn btn-block user-button">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="blankspace5"></div>
+
+
+
+{% endblock %}

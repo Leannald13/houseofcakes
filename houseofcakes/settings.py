@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'cart',
     'checkout',
     'contact',
+    'accounts',
     # Other
     'crispy_forms',
     'storages',
@@ -194,9 +195,13 @@ STRIPE_PUBLISHABLE = os.getenv("STRIPE_PUBLISHABLE", "PUBSLISHABLE KEY not found
 STRIPE_SECRET = os.getenv("STRIPE_SECRET", "SECRET KEY not found")
 
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
+if 'DEVELOPMENT' in os.environ:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    DEFAULT_FROM_EMAIL = 'houseofcakes@example.com'
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_USE_TLS = True
+    EMAIL_PORT = 587
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
