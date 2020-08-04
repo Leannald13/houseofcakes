@@ -722,12 +722,47 @@ span .navbar-toggler-icon {
     margin-left: 660px;
 }
 
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+@media(max-width: 767px) {
+.pay-now {
+    margin-left: 100px !important;
+}
+}
+
+@media(min-width: 768px) and (max-width: 1024px) {
+.pay-now {
+    margin-left: 360px;
+}
+}
+
 .delivery-address {
     margin-left: 370px;
 }
 
+@media(min-width: 768px) and (max-width: 1024px) {
+ .delivery-address {
+    margin-right: 200px !important;
+    width: 100% !important;
+}
+}
+
+@media(max-width: 767px) {
+.delivery-address {
+    margin-left: 0 !important;
+}
+
 .payment-info {
     margin-left: 500px;
+}
+
+@media(max-width: 767px) {
+.payment-info {
+    margin-left: 0 !important;
+}
 }
 
 .delivery-address-title {
@@ -735,6 +770,15 @@ span .navbar-toggler-icon {
     margin-top: 100px;
     font-size: 20px;
     margin-bottom: 30px;
+}
+
+@media(max-width: 767px) {
+.delivery-address-title {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
 }
 
 .payment-info-title {
