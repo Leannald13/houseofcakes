@@ -2,50 +2,34 @@ from django.shortcuts import render
 
 # Create your views here.
 
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponseRedirect, HttpResponse
 from django.contrib import messages
 from django.core.mail import send_mail
 import os
 from .forms import ContactForm
 from.models import Contact
 
-# Created an env var for the admin email so not in code.
-ADMINS_EMAIL = os.environ.get('ADMINS_EMAIL')
-
 
 def contact(request):
     if request.method == 'POST':
-        if request.user.is_authenticated:
 
-            form = Contact(
-                contact_title=request.POST['contact_title'],
-                contact_body=request.POST['contact_body'],
-                email=request.POST['email'],
-            )
+        form = Contact(
+            contact_title=request.POST['contact_title'],
+            contact_body=request.POST['contact_body'],
+            email=request.POST['email'],
+        )
 
-            form.save()
-
-        else:
-            form = Contact(
-                contact_title=request.POST['contact_title'],
-                contact_body=request.POST['contact_body'],
-                email=request.POST['email']
-            )
-
-            form.save()
+        form.save()
         return redirect('home')
 
-    else:
-        if request.user.is_authenticated:
-            form = ContactForm(
-                initial={'email': request.user.email}
-            )
-        else:
-            form = ContactForm()
+        send_mail(
+            request.POST['email'],
+            request.POST['contact_body'],
+            'House of Cakes',
+            ['leannald13@gmail.com'],
+            fail_silently=False,
+        )
 
-    context = {
-        'contact': 'active',
-        'form': form
-    }
+        return HttpResponseRedirect('/contact/contact/')
 
-    return render(request, 'contact/contact.html', context)
+
