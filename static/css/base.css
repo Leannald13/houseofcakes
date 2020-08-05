@@ -676,6 +676,20 @@ span .navbar-toggler-icon {
     font-family: 'Rubik', sans-serif;
 }
 
+/* accounts.html (signin, register, signout) */
+
+.blankspace10 {
+    height: 100px;
+    background-color: #f2f7f7;
+}
+
+.login {
+    background-color: #f2f7f7;
+}
+
+.accounts-background {
+    background-color: #f2f7f7;
+}
 
 /* checkout.html */
 
@@ -751,14 +765,7 @@ span .navbar-toggler-icon {
 }
 }
 
-.blankspace10 {
-    height: 100px;
-    background-color: #fff;
-}
 
-.login {
-    background-color: pink;
-}
 
 @media(max-width: 767px) {
 .delivery-address {
