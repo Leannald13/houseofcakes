@@ -18,7 +18,6 @@ def contact(request):
                 contact_title=request.POST['contact_title'],
                 contact_body=request.POST['contact_body'],
                 email=request.POST['email'],
-                query_user=request.user
             )
 
             form.save()
@@ -57,4 +56,4 @@ def contact(request):
 
     return render(request, 'contact/contact.html', context)
 
-    
+
