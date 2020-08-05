@@ -743,11 +743,21 @@ span .navbar-toggler-icon {
     margin-left: 370px;
 }
 
+
 @media(min-width: 768px) and (max-width: 1024px) {
  .delivery-address {
     margin-right: 200px !important;
     width: 100% !important;
 }
+}
+
+.blankspace10 {
+    height: 100px;
+    background-color: #fff;
+}
+
+.login {
+    background-color: pink;
 }
 
 @media(max-width: 767px) {

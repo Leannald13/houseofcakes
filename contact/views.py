@@ -33,8 +33,6 @@ def contact(request):
             )
 
             form.save()
-
-        messages.success(request, 'Your enquiry has been submitted, we will get back to you shortly.')
         return redirect('home')
 
     else:
