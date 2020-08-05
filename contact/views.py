@@ -12,15 +12,25 @@ from.models import Contact
 
 def contact(request):
     if request.method == 'POST':
+        if request.user.is_authenticated:
 
-        form = Contact(
-            contact_title=request.POST['contact_title'],
-            contact_body=request.POST['contact_body'],
-            email=request.POST['email'],
-        )
+            form = Contact(
+                contact_title=request.POST['contact_title'],
+                contact_body=request.POST['contact_body'],
+                email=request.POST['email'],
+                query_user=request.user
+            )
 
-        form.save()
-        return redirect('home')
+            form.save()
+
+        else:
+            form = Contact(
+                contact_title=request.POST['contact_title'],
+                contact_body=request.POST['contact_body'],
+                email=request.POST['email']
+            )
+
+            form.save()
 
         send_mail(
             request.POST['email'],
@@ -30,6 +40,21 @@ def contact(request):
             fail_silently=False,
         )
 
-        return HttpResponseRedirect('/contact/contact/')
+        return redirect('home')
 
+    else:
+        if request.user.is_authenticated:
+            form = ContactForm(
+                initial={'email': request.user.email}
+            )
+        else:
+            form = ContactForm()
 
+    context = {
+        'contact': 'active',
+        'form': form
+    }
+
+    return render(request, 'contact/contact.html', context)
+
+    
