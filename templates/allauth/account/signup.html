@@ -1,22 +1,26 @@
 {% extends "account/base.html" %}
 {% load static %}
+{% load bootstrap_tags %}
 
 {% load i18n %}
 
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block inner_content %}
+<div class="blankspace10"></div>
 <h1>{% trans "Sign Up" %}</h1>
+<div class="accounts-background">
 
-<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+<p class="accounts-heading2">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
 
 <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
   {% csrf_token %}
-  {{ form.as_p }}
+  {{ form | as_bootstrap }}
   {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+  <input class="accounts-input" type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
-  <button type="submit">{% trans "Sign Up" %} &raquo;</button>
+  <button class="signin-button" type="submit">{% trans "Sign Up" %} &raquo;</button>
 </form>
+<div class="accounts-background">
 
 {% endblock %}

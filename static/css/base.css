@@ -683,12 +683,104 @@ span .navbar-toggler-icon {
     background-color: #f2f7f7;
 }
 
+
 .login {
     background-color: #f2f7f7;
 }
 
-.accounts-background {
+.accounts-background3 {
     background-color: #f2f7f7;
+}
+
+.accounts-background {
+    margin-left: 450px;
+    
+}
+
+.accounts-heading2 {
+    font-size: 17px;
+    color: #484848;
+    font-family: 'Rubik', sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+div h1 {
+    font-size: 40px;
+    color: #484848;
+    font-family: 'Satisfy', cursive;
+    background-color: #f2f7f7;
+    margin-left: 600px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    
+}
+
+.signin-button {
+    background-color: #a0c2e7;
+    color: #696969;
+    width: 100px;
+    height: 40px;  
+    border: none;
+    font-family: 'Rubik', sans-serif;
+    margin-bottom: 50px;
+    border-radius: 4px;
+}
+
+.signin-button:hover {
+    background-color: #a0c2e7;
+    color: #fff;
+    width: 100px;
+    height: 40px;
+    border: none;
+    font-family: 'Rubik', sans-serif;
+    margin-bottom: 50px;
+    border-radius: 4px;
+}
+
+#div_id_login {
+    font-size: 18px;
+    font-family: 'Rubik', sans-serif;
+}
+
+#div_id_password {
+    font-size: 18px;
+    font-family: 'Rubik', sans-serif;
+}
+
+#div_id_remember {
+    font-size: 18px;
+    font-family: 'Rubik', sans-serif;
+}
+
+.secondaryAction {
+    font-size: 18px;
+    font-family: 'Rubik', sans-serif;
+}
+
+#div_id_email {
+    font-size: 18px;
+    font-family: 'Rubik', sans-serif;
+}
+
+#div_id_email2 {
+    font-size: 18px;
+    font-family: 'Rubik', sans-serif;
+}
+
+#div_id_username {
+    font-size: 18px;
+    font-family: 'Rubik', sans-serif;
+}
+
+#div_id_password1 {
+    font-size: 18px;
+    font-family: 'Rubik', sans-serif;
+}
+
+#div_id_password2 {
+    font-size: 18px;
+    font-family: 'Rubik', sans-serif;
 }
 
 /* checkout.html */
