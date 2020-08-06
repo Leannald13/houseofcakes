@@ -37,6 +37,45 @@
     </div>
   </div>
 </div>
+
+
+<div class="blankspace9"></div>
+   <div class="row comment-rows">
+            <h5 class="comment-title">Comments</h5>
+            {% if comment %}
+                {% for usercomment in comment %}
+                    <div class="col-12">
+                        <div class="card comment-card">
+                            <div class="card-header">
+                                <h5>Posted By: {{ usercomment.comment_user.username }}</h5>
+                            </div>
+                            <div class="card-body">
+                                <p>{{ usercomment.comment_body }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                <div class="card-body">
+                <p>No comments on this yummy cake just yet. Add a comment below to be the first.</p>
+                </div>
+            {% endif %}
+        </div>
+
+
+        <div class="row comment-rows">
+            <h5>Add Comment</h5>
+                <div class="col-12">
+                    <div class="card-body">
+                        <form action="{% url 'comment' product.id %}" method="POST">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                {{ form }}
+                            </div>
+                            <input type="submit" value="Submit" class="btn user-button">
+                        </form>
+                    </div>
+                </div>    
+        </div>
 <div class="blankspace7"></div>
  
 {% endblock %}
