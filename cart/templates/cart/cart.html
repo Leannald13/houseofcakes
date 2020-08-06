@@ -30,13 +30,36 @@
             {% if total > 0 %}
                 <a class="btn checkout-button" href="{% url 'checkout' %}" role="button">Checkout</a>
             {% else %}
-                <p>Your cart is now empty. Return to <a class="return-button" href="">store</a>.</p>
+                <p class="return-to-cakes">Your cart is now empty. Return to <a class="return-button" href="{% url 'products' %}">cakes</a>.</p>
             {% endif %}
         </div>
     </div>
 </section>
-
-
 <div class="blankspace3"></div>
+<style>
+    .return-to-cakes {
+        color: #484848;
+        font-size: 18px;
+        font-family: 'Rubik', sans-serif;
+        margin-top: 10px;
+    }
+
+    .total {
+    color: #484848;
+    font-size: 18px;
+    font-family: 'Rubik', sans-serif;
+    margin-top: 50px;
+    }
+
+    @media(min-width: 767px) and (max-width: 1024px) {
+    .blankspace2 {
+        height: 300px !important;
+        background-color: #fff;
+        width: 100%;
+    }
+    }
+</style>
 {% endblock %}
+
+
 
