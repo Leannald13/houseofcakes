@@ -13,7 +13,7 @@
     <p class="card-text cart3">Quantity: {{ item.quantity }}</p>
      <form action="{% url 'adjust_cart' item.product.id %}" method="POST" class="form-group">
       {% csrf_token %}
-       <input type="number" class="form-control cart-input" name="quantity" min="0" max="5" placeholder="Amend Quantity" required>
+       <input type="number" class="form-control cart-input" name="quantity" value="{{ item.quantity }}" min="0" max="5" placeholder="Amend Quantity" required>
         <button class="btn form-control amend-quantity-button" type="submit">Amend Quantity</button>
       <a href="" class="btn-delete-cart"><i class="fas fa-trash"></i></a>
   </div>
