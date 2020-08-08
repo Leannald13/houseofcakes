@@ -1,5 +1,6 @@
 env.py
 db.sqlite3
+core.Microsoft*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
