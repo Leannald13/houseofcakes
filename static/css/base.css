@@ -103,12 +103,12 @@
 @media(min-width: 768px) and (max-width: 1024px) {
     .sub-head3 {
         background-color: #fbf7f5;
-        font-size: 25px !important;
+        font-size: 30px !important;
         text-align: center;
         font-family: 'Rubik', sans-serif;
-        padding-left: 80px;
-        padding-right: 140px;
-        margin-right: 80px;
+        padding-left: 30px;
+        padding-right: 30px;
+        margin-left: 60px;
         color: #484848;
         margin-top: 290px !important;
  
@@ -130,9 +130,9 @@
 @media (min-width: 768px) and (max-width: 1024px) {
     .sub-head {
         font-family: 'Satisfy', cursive;
-        font-size: 50px !important;
+        font-size: 60px !important;
         text-align: center;
-        padding-right: 90px;
+        padding-left: 120px;
         margin-top: 15px;
         
     }
@@ -166,7 +166,7 @@
 
 @media (min-width: 768px) and (max-width: 1024px) {
     .blankspace {
-        height: 550px;
+        height: 620px;
         background-color: #fbf7f5;
     }
 }
@@ -190,7 +190,7 @@
     margin-bottom: 30px;
     padding-left: 5px;
     padding-right: 15px;
-    margin-left: 40px;
+    margin-left: 110px;
 
 }
 }
@@ -227,13 +227,12 @@
 @media(min-width: 768px) and (max-width: 1024px) {
 .sub-head2 {
     font-family: 'Satisfy', cursive;
-    font-size: 30px;
+    font-size: 35px;
     text-align: center;
     color: #484848;
     margin-left: 70px;
     margin-right: 70px;
-    padding-left: 30px;
-    padding-right: 150px;
+    padding-right: 40px;
 }
 }
 
@@ -247,15 +246,24 @@
 }
 }
 
+@media(min-width: 768px) and (max-width: 1024px) {
+.subhead-background {
+    padding-top: 40px;
+    padding-bottom: 50px;
+    height: 350px;
+    z-index: 99999999;
+    background: rgba(190, 183, 183, 0.747);
+}
+}
+
 /* nav bar */
 
 
 .main-nav {
     background-color: #a0c2e7;
     width: 100% !important;
-    height: 280px;
+    height: 180px;
     left: 0;
-}
 }
 
 .nav-item {
@@ -299,8 +307,6 @@
     margin-top: 20px;
 }
 
-
-
 @media (max-width: 767px) {
 .main-nav {
     background-color: #a0c2e7;
@@ -334,8 +340,8 @@
 @media(min-width: 768px) and (max-width: 1024px) {
 .navbar-dark .navbar-brand {
     font-family: 'Satisfy', cursive;
-    font-size: 40px;
-    margin-left: 25px !important;
+    font-size: 50px;
+    margin-left: 15px !important;
     margin-top: 25px;
     
 }
@@ -343,7 +349,9 @@
 
 @media(min-width: 768px) and (max-width: 1024px) {
 .navbar-toggler-icon {
-    margin-right: 140px;
+    margin-right: 50px;
+    padding-top: 20px;
+    font-size: 30px;
 }
 }
 
@@ -358,12 +366,11 @@
 
 @media(min-width: 768px) and (max-width: 1024px) {
 .search-cake {
-    margin-left: 130px;
+    margin-left: 170px;
     margin-top: 60px;
     padding-left: 30px;
 }
 }
-
 
 /* footer.html */
 
@@ -398,7 +405,7 @@
 @media(min-width: 768px) and (max-width: 1024px) {
 .footer-copyright {
     font-family: 'Rubik', sans-serif;
-    margin-right: 120px;
+    margin-right: 90px;
 }
 }
 
@@ -483,6 +490,90 @@ ul {
     margin-top: 25px;
     background-color: #C0C0C0;
     color: #696969;
+}
+
+@media (max-width: 767px) {
+.cakebox {  
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: #EEF0F2;
+    width: 340px !important;
+    height: 470px;
+    margin-right: 100px;
+    
+}
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+.cakebox {  
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: #EEF0F2;
+    width: 400px !important;
+    height: 470px;
+    margin-left: 80px;
+    
+}
+}
+
+@media(max-width: 767px) {
+.blankspace13 {
+    height: 350px;
+
+}
+}
+
+@media(min-width: 768px) and (max-width: 1024px) {
+.cakeimage {
+    width: 280px;
+    height: 280px;
+    margin-left: 25px;
+}
+}
+
+@media(min-width: 768px) and (max-width: 1024px) {
+.cakename {
+    font-size: 18px !important;
+    font-family: 'Rubik', sans-serif;
+    color: #696969;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    list-style: none;
+    margin-right: 30px;
+    font-weight: bold;
+}
+}
+
+@media(min-width: 768px) and (max-width: 1024px) {
+.cakeprice {
+    font-size: 15px;
+    color: #696969;
+    font-family: 'Rubik', sans-serif;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-right: 30px;
+    list-style: none;
+}
+}
+
+@media(min-width: 768px) and (max-width: 1024px) {
+.more-button {
+    margin-left: 100px;
+    margin-top: 25px;
+    background-color: #D3D3D3;
+    color: #696969;
+}
+}
+
+@media(min-width: 768px) and (max-width: 1024px) {
+.more-button:hover {
+    margin-left: 100px;
+    margin-top: 25px;
+    background-color: #C0C0C0;
+    color: #696969;
+}
 }
 
 /* product details */
