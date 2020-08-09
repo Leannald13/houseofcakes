@@ -34,7 +34,7 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 {% include "socialaccount/snippets/login_extra.html" %}
 
 {% else %}
-<p class="accounts-heading2">{% blocktrans %}If you have not created an account yet, then please
+<p class="accounts-heading3">{% blocktrans %}If you have not created an account yet, then please
 <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
 {% endif %}
 
@@ -48,6 +48,5 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
   <button class="signin-button" type="submit">{% trans "Sign In" %}</button>
 </form>
 </div>
-
 
 {% endblock %}

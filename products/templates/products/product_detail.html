@@ -63,6 +63,7 @@
 
 
         <div class="row comment-rows">
+          {% if request.user.is_authenticated %}
             <h5>Add Comment</h5>
                 <div class="col-12">
                     <div class="card-body">
@@ -72,7 +73,9 @@
                                 {{ form }}
                             </div>
                             <input type="submit" value="Submit" class="btn user-button">
+                            {% endif %}
                         </form>
+                          
                     </div>
                 </div>    
         </div>
