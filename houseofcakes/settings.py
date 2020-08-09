@@ -135,8 +135,6 @@ else:
     }
 
 
-
-
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
@@ -177,6 +175,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
 
+# keys and set up for aws bucket
 
 if 'USE_AWS' in os.environ:
     AWS_STORAGE_BUCKET_NAME = 'houseofcakes2'
@@ -197,6 +196,7 @@ STRIPE_CURRENCY = 'usd'
 STRIPE_PUBLISHABLE = os.getenv("STRIPE_PUBLISHABLE", "PUBSLISHABLE KEY not found")
 STRIPE_SECRET = os.getenv("STRIPE_SECRET", "SECRET KEY not found")
 
+# Email set up with gmail account
 
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

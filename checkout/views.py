@@ -12,9 +12,11 @@ import stripe
 
 stripe.api_key = settings.STRIPE_SECRET
 
+
 @login_required()
 def checkout(request):
-    
+    """ Checkout form creating the order form and payment form """
+
     if request.method == "POST":
         order_form = OrderForm(request.POST)
         payment_form = MakePaymentForm(request.POST)
@@ -60,5 +62,7 @@ def checkout(request):
         payment_form = MakePaymentForm()
         order_form = OrderForm()
 
-    return render(request, "checkout/checkout.html", {"payment_form": payment_form, "order_form": order_form, "publishable": settings.STRIPE_PUBLISHABLE})
+    return render(request, "checkout/checkout.html", {
+        "payment_form": payment_form, "order_form": order_form,
+        "publishable": settings.STRIPE_PUBLISHABLE})
 

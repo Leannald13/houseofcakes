@@ -1,33 +1,53 @@
 <nav id="custom-navbar" class="navbar navbar-expand-lg navbar-dark">
+<!-- main nav bar -->
   <p class="navbar-brand main-logo">House Of Cakes</p>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler">
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarToggler"
+  >
     <span class="navbar-toggler-icon"></span>
   </button>
-     <form class="search-cake" method="GET" action="{% url 'products' %}">
-                    <div class="input-group w-100">
-                        <input class="form-control border border-white" type="text" name="q" placeholder="Search cakes">
-                        <div>
-                            <button class="form-control btn btn-white border border-white rounded-0" type="submit">
-                                <span class="icon">
-                                    <i class="fas fa-search"></i>
-                                </span>
-                            </button>
-                        </div>
-                    </div>
-                </form>
+  <!-- form to allow user to search cakes. Searches titles and descriptions -->
+  <form class="search-cake" method="GET" action="{% url 'products' %}">
+    <div class="input-group w-100">
+      <input class="form-control border border-white" type="text" name="q" placeholder="Search cakes"/>
+      <div>
+        <button class="form-control btn btn-white border border-white rounded-0" type="submit">
+          <span class="icon">
+            <i class="fas fa-search"></i>
+          </span>
+        </button>
+      </div>
+    </div>
+  </form>
   <div class="collapse navbar-collapse" id="navbarToggler">
     <ul class="navbar-nav ml-auto w-auto">
-      <li class="nav-item "><a class="nav-link-active" style="padding-left: 10px;" href="{% url 'home' %}">home</a></li>
-      <li class="nav-item"><a class="nav-link-active" style="padding-left: 10px;" href="{% url 'products' %}">shop</a></li>
-      <li class="nav-item"><a class="nav-link-active" style="padding-left: 10px;" href="{% url 'account_login' %}">login</a></li>
-      <li class="nav-item"><a class="nav-link-active" style="padding-left: 10px;" href="{% url 'account_signup' %}">register</a></li>
-      <li class="nav-item"><a class="nav-link-active" style="padding-left: 10px;" href="{% url 'account_logout' %}">logout</a></li>
-      <li class="nav-item"><a class="nav-link-active" style="padding-left: 10px;" href="{% url 'view_cart' %}">cart</a>
+      <li class="nav-item">
+        <a class="nav-link-active" style="padding-left: 10px;" href="{% url 'home' %}">home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link-active" style="padding-left: 10px;" href="{% url 'products' %}">shop</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link-active" style="padding-left: 10px;" href="{% url 'account_login' %}">login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link-active" style="padding-left: 10px;" href="{% url 'account_signup' %}">register</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link-active" style="padding-left: 10px;" href="{% url 'account_logout' %}">logout</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link-active" style="padding-left: 10px;" href="{% url 'view_cart' %}">cart</a>
         {% if product_count > 0 %}
         <label class="badge">{{ product_count }}</label>
         {% endif %}
       </li>
-      <li class="nav-item"><a class="nav-link-active" style="padding-left: 10px; padding-right: 30px;" href="{% url 'contact' %}">contact</a></li>
-      </ul>
-    </div>
-    </nav>
+      <li class="nav-item">
+        <a class="nav-link-active" style="padding-left: 10px; padding-right: 30px;" href="{% url 'contact' %}">contact</a>
+      </li>
+    </ul>
+  </div>
+</nav>

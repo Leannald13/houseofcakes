@@ -1,3 +1,4 @@
+  
 {% extends "base.html" %}
 {% load static %}
 {% load bootstrap_tags %}
@@ -19,6 +20,7 @@
                 <div class="card-header">
                     <h5 class="contact-heading2">Contact</h5>
                 </div>
+                <!-- contact form which is linked to gmail account -->
                 <div class="card-body">  
                     <form action="{% url 'contact' %}" method="POST">
                         {% csrf_token %}
@@ -33,9 +35,7 @@
     </div>
 </div>
 </div>
-
 <div class="blankspace5"></div>
-
 
 
 {% endblock %}

@@ -13,7 +13,7 @@
         Stripe.publishableKey = '{{ publishable }}';
     //]]>
     </script>
-    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script> <!-- js for stripe payment -->
 {% endblock %}
 
 {% block content %}
@@ -30,54 +30,55 @@
 </div>
 <div class="row checkout-row2">
     <div class="col-10">
-                <p class="text-center order-summary">Order Summary</p>
-                <div class="row">
-                    <div class="col-7 offset-2">
-                        <p class="mb-1">Item</p>
-                    </div>
-                    <div class="col-3 text-right">
-                        <p class="mb-1 mt-0 small text-muted">Subtotal</p>
-                    </div>
-                </div>
-{% for item in cart_items %}
-                    <div class="row">
-                        <div class="col-2 mb-1">
-                        </div>
-                        <div class="col-7">
-                            <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                            <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
-                        </div>
-                        <div class="col-3 text-right">
-                            <p class="my-0 text-muted">£{{ item.product.price }}</p>
-                        </div>
-                    </div>
-                {% endfor %}
-                <hr class="my-0">
-                <div class="row text-black text-right">
-                    <div class="col-7 offset-2">
-                        <p class="my-0">Order Total:</p>
-                        <p class="my-0">Delivery:</p>
-                        <p class="my-0">Grand Total:</p>
-                    </div>
-                    <div class="col-3">
-                        <p class="my-0">£{{ total | floatformat:2 }}</p>
-                        <p class="my-0">£{{ delivery | floatformat:2 }}</p>
-                        <p class="my-0"><strong>£{{ grand_total | floatformat:2 }}</strong></p>
-                    </div>
-                </div>
+        <p class="text-center order-summary">Order Summary</p>
+        <div class="row">
+            <div class="col-7 offset-2">
+                <p class="mb-1">Item</p>
             </div>
-
+            <div class="col-3 text-right">
+                <p class="mb-1 mt-0 small text-muted">Subtotal</p>
+            </div>
+        </div>
+        {% for item in cart_items %}
+        <!-- displays the items about to be purchased -->
+        <div class="row">
+            <div class="col-2 mb-1">
+            </div>
+            <div class="col-7">
+                <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
+            </div>
+            <div class="col-3 text-right">
+                <p class="my-0 text-muted">£{{ item.product.price }}</p>
+            </div>
+        </div>
+        {% endfor %}
+        <hr class="my-0">
+        <!-- displays the total amount of the order inc delivery. -->
+        <div class="row text-black text-right">
+            <div class="col-7 offset-2">
+                <p class="my-0">Order Total:</p>
+                <p class="my-0">Delivery:</p>
+                <p class="my-0">Grand Total:</p>
+            </div>
+            <div class="col-3">
+                <p class="my-0">£{{ total | floatformat:2 }}</p>
+                <p class="my-0">£{{ delivery | floatformat:2 }}</p>
+                <p class="my-0"><strong>£{{ grand_total | floatformat:2 }}</strong></p>
+            </div>
+        </div>
+    </div>
+    <!-- order form for delivery details -->
     <form role="form" method="POST" action="{% url 'checkout' %}" id="payment-form">
         <div class="row">
           {% csrf_token %}
           <div class="form-group col-lg-6 delivery-address">
             <p class="delivery-address-title">Delivery Address</p>
-            {{ order_form | as_bootstrap}}
-            
+            {{ order_form | as_bootstrap}}  
               <label for="order-email">Email</label>
               <input name="order-email" type="email" class="form-control" id="order" />
-          
           </div>
+          <!-- form or payment information -->
           <div class="form-group col-lg-4 payment-info">
             <p class="payment-info-title">Payment Information</p>
             {{ payment_form | as_bootstrap }}
@@ -85,7 +86,7 @@
         </div>
         <div class="row">
           <div class="pay-now">
-            <input class="btn btn-block btn-lg btn-info" id="pay-now" type="submit" name="commit" value="Pay Now" />
+            <input class="btn btn-block btn-lg btn-info" id="pay-now" type="submit" name="commit" value="Pay Now"/>
           </div>
         </div>
       </form>
@@ -201,4 +202,3 @@
 
 
 {% endblock %}
- 

@@ -3,7 +3,7 @@
 
 {% block content %}
 <div class="blankspace2"></div>
-<h2 class="cart-heading">Shopping Bag</h2>
+<h2 class="cart-heading">Shopping Bag</h2>   <!-- displays the items in the shopping bag. -->
      {% for item in cart_items %}
   <div class="card cart-card" style="width: 25rem;">
   <div class="card-body">
@@ -13,21 +13,20 @@
     <p class="card-text cart3">Quantity: {{ item.quantity }}</p>
      <form action="{% url 'adjust_cart' item.product.id %}" method="POST" class="form-group">
       {% csrf_token %}
+      <!-- user can amend quantity -->
        <input type="number" class="form-control cart-input" name="quantity" value="{{ item.quantity }}" min="0" max="5" placeholder="Amend Quantity" required>
-        <button class="btn form-control amend-quantity-button" type="submit">Amend Quantity</button>
-      <a href="" class="btn-delete-cart"><i class="fas fa-trash"></i></a>
-  </div>
-</div>
-
-
- {% endfor %}
-   
+        <button class="btn form-control amend-quantity-button" type="submit">Amend Quantity</button>   
+      </form>
+      {% endfor %}
+    </div>
+</div>  
 <section class="container">
   <div class="row cart-row">
         <div class="col-12">
             <strong class="total">Total:</strong>
-            <strong class="total"><span aria-hidden="true">£</span>{{ total }}</strong>
+            <!-- displays order total or message if cart is empty -->
             {% if total > 0 %}
+            <strong class="total"><span aria-hidden="true">£</span>{{ total }}</strong> 
                 <a class="btn checkout-button" href="{% url 'checkout' %}" role="button">Checkout</a>
             {% else %}
                 <p class="return-to-cakes">Your cart is now empty. Return to <a class="return-button" href="{% url 'products' %}">cakes</a>.</p>

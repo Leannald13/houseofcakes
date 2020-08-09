@@ -1,21 +1,23 @@
-{% extends "base.html" %}
-{% load static %}
-
+{% extends "base.html" %} 
+{% load static %} 
 {% block content %}
+
+<!-- products page list all cakes -->
 <div class="blankspace13"></div>
-    {% for product in products %}
-      <div class="productrows">
-      <ul class="cakebox">  
-      <li><img class="cakeimage" alt="{{ product.name }}" src="{{ product.image_url }}"></li>
-      <li class="cakename">{{ product.name }}</li>
-      <li class="cakeprice"> £{{ product.price }}</li>
-      <form class="form-group" method="POST" action="{% url 'product_detail' product.id %}">
-        {% csrf_token %}
-        <button class="btn btn-form-control more-button" type="submit">Find Out More</button>
-        </form>
-        </ul> 
-      </div>
-    {% endfor %} 
-
-
+{% for product in products %}
+<div class="productrows">
+  <ul class="cakebox">
+    <li>
+      <img class="cakeimage" alt="{{ product.name }}" src="{{ product.image_url }}"/>
+    </li>
+    <li class="cakename">{{ product.name }}</li>
+    <li class="cakeprice">£{{ product.price }}</li>
+    <form class="form-group" method="POST" action="{% url 'product_detail' product.id %}">
+      {% csrf_token %}
+      <!-- this button takes the user to product detail page providing more info on cake and add to cart -->
+      <button class="btn btn-form-control more-button" type="submit">Find Out More</button>
+    </form>
+  </ul>
+</div>
+{% endfor %} 
 {% endblock %}

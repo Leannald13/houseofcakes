@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib.auth.decorators import login_required
 from .models import Comment
+from django.contrib import messages
 from comment.forms import CommentForm
 from products.models import Product
 

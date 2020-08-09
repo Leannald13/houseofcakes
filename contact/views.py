@@ -1,7 +1,3 @@
-from django.shortcuts import render
-
-# Create your views here.
-
 from django.shortcuts import render, redirect, HttpResponseRedirect, HttpResponse
 from django.contrib import messages
 from django.core.mail import send_mail
@@ -11,6 +7,7 @@ from.models import Contact
 
 
 def contact(request):
+    """ Contact form for users to send message """
     if request.method == 'POST':
         if request.user.is_authenticated:
 
@@ -55,5 +52,3 @@ def contact(request):
     }
 
     return render(request, 'contact/contact.html', context)
-
-

@@ -7,8 +7,10 @@ from comment.forms import CommentForm
 
 # Create your views here.
 
+
 def all_products(request):
-    """A view to show each product item and description"""
+    """A view to show each product item and description
+       allows user to search cakes """
     products = Product.objects.all()
     query = None
 
@@ -16,7 +18,6 @@ def all_products(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                message.error(request, "You didn't search a cake!")
                 return redirect(reverse('products'))
 
             queries = Q(name__icontains=query) | Q(description__icontains=query)
