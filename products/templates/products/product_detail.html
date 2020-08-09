@@ -2,7 +2,7 @@
 {% load static %} 
 {% block content %}
 
-<div class="blankspace"></div>
+<div class="blankspace16"></div>
 <div class="product-background mb-3" style="max-width: 1200px; max-height: 700px;">
   <div class="row no-gutters">
     <div class="col-md-4">
@@ -21,11 +21,11 @@
               <p class="mt-3 qty_input"><strong>Quantity:</strong></p>
               <div class="form-group">
                 <div class="input-group">
-                  <input class="qty_input" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}"/>
+                  <input class="qty_input" id="qty_input" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}"/>
                 </div>
               </div>
             </div>
-            <div class="col-12">
+            <div class="col-12 all-buttons">
             <!-- Buttons to add to cart, go back to all products, or go to checkout -->
               <a href="{% url 'products' %}" class="btn btn-primary button-detail" role="button">Keep Shopping</a>
               <input type="submit" class="btn btn-primary button-add" role="button" value="Add to Bag"/>
