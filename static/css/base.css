@@ -907,6 +907,181 @@ div h1 {
     font-family: 'Rubik', sans-serif;
 }
 
+
+@media(max-width: 767px) {
+#signup_form {
+    margin-left: 60px;
+}
+}
+
+@media(min-width: 768px) and (max-width: 1024px) {
+#signup_form {
+    margin-right: 40px;
+    margin-left: 0;
+}
+}
+
+@media(max-width: 1024px) {
+.blankspace10 {
+    height: 150px;
+
+}
+}
+
+@media(max-width: 767px) {
+    div h1 {
+        font-size: 30px;
+        color: #484848;
+        font-family: 'Satisfy', cursive;
+        background-color: #f2f7f7;
+        margin-left: 130px;
+        margin-top: 30px;
+        margin-bottom: 40px;
+        
+    }
+}
+
+
+@media(min-width: 768px) and (max-width: 1024px) {
+    div h1 {
+        font-size: 40px;
+        color: #484848;
+        font-family: 'Satisfy', cursive;
+        background-color: #f2f7f7;
+        margin-left: 280px;
+        margin-top: 30px;
+        margin-bottom: 40px;
+        
+    }
+}
+
+@media(max-width: 767px) {
+.accounts-background {
+    margin-right: 100px;
+    margin-left: 0 !important;
+    
+}
+}
+
+@media(min-width: 768px) and (max-width: 1024px) {
+.accounts-background {
+    margin-left: 100px;
+    
+}
+}
+
+@media (max-width: 767px) {
+.accounts-heading2 {
+    font-size: 17px;
+    color: #484848;
+    font-family: 'Rubik', sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-left: 70px;
+    padding-right: 40px !important; 
+    
+}
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+.accounts-heading2 {
+    font-size: 25px;
+    color: #484848;
+    font-family: 'Rubik', sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-right: 100px;
+    padding-left: 0;
+    padding-right: 0;
+    
+}
+}
+
+@media(max-width: 767px) {
+.login {
+    background-color: #f2f7f7;
+    padding-left: 40px;
+    padding-right: 70px;
+    margin-left: 60px;
+}
+}
+
+@media(min-width: 768px) and (max-width: 1024px) {
+.login {
+    background-color: #f2f7f7;
+    padding-left: 40px;
+    padding-right: 70px;
+    margin-left: 90px;
+}
+}
+
+
+@media(max-width: 767px) {
+.signin-button {
+    background-color: #a0c2e7;
+    color: #696969;
+    width: 100px;
+    height: 40px;  
+    border: none;
+    font-family: 'Rubik', sans-serif;
+    margin-top: 20px;
+    margin-left: 80px;
+    margin-bottom: 50px;
+    border-radius: 4px;
+}
+}
+
+@media(max-width: 767px) {
+.signin-button:hover {
+    background-color: #a0c2e7;
+    color: #fff;
+    width: 100px;
+    height: 40px;
+    border: none;
+    font-family: 'Rubik', sans-serif;
+    margin-left: 80px;
+    margin-bottom: 50px;
+    border-radius: 4px;
+}
+}
+
+@media(min-width: 768px) and (max-width: 1024px) {
+.signin-button {
+    background-color: #a0c2e7;
+    color: #696969;
+    width: 100px;
+    height: 40px;  
+    border: none;
+    font-family: 'Rubik', sans-serif;
+    margin-top: 20px;
+    margin-left: 200px;
+    margin-bottom: 50px;
+    border-radius: 4px;
+}
+}
+
+@media(min-width: 768px) and (max-width: 1024px) {
+.signin-button:hover {
+    background-color: #a0c2e7;
+    color: #fff;
+    width: 100px;
+    height: 40px;
+    border: none;
+    font-family: 'Rubik', sans-serif;
+    margin-left: 200px;
+    margin-bottom: 50px;
+    border-radius: 4px;
+}
+}
+
+@media(max-width: 767px) {
+.secondaryAction {
+    font-size: 18px;
+    font-family: 'Rubik', sans-serif;
+    margin-left: 30px;
+}
+}
+
 /* checkout.html */
 
 .checkout-background {
