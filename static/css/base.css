@@ -5,7 +5,6 @@
 .parallax {
     background-image: url("../images/background.jpg");
     background-attachment: fixed;
-    background-position: 0 Y;
     background-repeat: no-repeat;
     background-size: cover;
     height: 700px;
@@ -1569,6 +1568,12 @@ ul {
     font-family: 'Rubik', sans-serif;
 }
 
+.checkout-button:hover {
+    background-color: #C0C0C0;
+    margin-left: 245px;
+    font-family: 'Rubik', sans-serif;
+}
+
 .total {
     margin-left: 245px;
     margin-bottom: 10px;
@@ -1576,6 +1581,14 @@ ul {
 
 @media(max-width: 767px) {
 .checkout-button {
+    background-color: #C0C0C0;
+    margin-left: 70px;
+    font-family: 'Rubik', sans-serif;
+}
+}
+
+@media(max-width: 767px) {
+.checkout-button:hover {
     background-color: #C0C0C0;
     margin-left: 70px;
     font-family: 'Rubik', sans-serif;
@@ -1598,41 +1611,17 @@ ul {
 }
 
 @media(min-width: 768px) and (max-width: 1024px) {
+.checkout-button:hover {
+    background-color: #C0C0C0;
+    margin-left: 90px;
+    font-family: 'Rubik', sans-serif;
+}
+}
+
+@media(min-width: 768px) and (max-width: 1024px) {
 .total {
     margin-left: 90px !important;
     margin-bottom: 10px;
-}
-}
-
-.checkout-button {
-    background-color: #C0C0C0;
-    margin-left: 30px;
-    font-family: 'Rubik', sans-serif;
-}
-
-.checkout-button:hover {
-    background-color: #696969;;
-    margin-left: 30px;
-    color: white;
-    font-family: 'Rubik', sans-serif;
-}
-
-@media(max-width: 767px) {
-.checkout-button {
-    background-color: #C0C0C0;
-    margin-left: 30px;
-    margin-right: 60px;
-    font-family: 'Rubik', sans-serif;
-}
-}
-
-@media(max-width: 767px) {
-.checkout-button:hover {
-    background-color: #696969;;
-    margin-left: 30px;
-    margin-right: 60px;
-    color: white;
-    font-family: 'Rubik', sans-serif;
 }
 }
 

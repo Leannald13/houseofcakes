@@ -49,7 +49,7 @@ def checkout(request):
                 )
             except stripe.error.CardError:
                 messages.error(request, "Your card has been declined!")
- 
+
             if customer.paid:
                 messages.error(request, "You have successfully paid!")
                 request.session['cart'] = {}

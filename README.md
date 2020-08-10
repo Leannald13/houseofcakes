@@ -35,14 +35,14 @@ My inspiration for this project came from my own experience of trying to find ni
 ### User Stories
 
 As a user of this platform I will be able to:
--	Register on the account but adding my email address, username and password.
+-	Register on the account by adding my email address, username and password.
 -	Login with my username/email and password.
 -	Log out.
 -	I will be able to search for what I want using the search bar which will show results from both the title of the cake and the description of the cake.
 -	I will be able to browse all products available.
 -	I will be able to find out more about each product but clicking on the ‘find out more’ button.
--	I will be able to add cakes to a shopping cart and I will be able to see how many items I have in my cart by looking at the navigation bar which tells me my items have been added.
--	From the page (product_detail.html) I will be able to go use the ‘back’ button to browse more cakes and I will also be able to proceed to checkout.
+-	I will be able to add cakes to a shopping cart and I will be able to see how many items I have in my cart by looking at the navigation bar which tells me my items have been added to the cart.
+-	From the page (product_detail.html) I will be able to use the ‘back’ button to browse more cakes and I will also be able to proceed to checkout.
 -	The checkout page will allow me to amend the number of items in my cart by increasing or decreasing.
 -	I will see my order items at the top of the checkout page and I will be able to input my delivery details and card details. My payment will be processed when I press the ‘submit’ button.
 -	I will be able to leave a review/comment on the cakes I have purchased on the product_detail.html page.
@@ -52,7 +52,7 @@ As a user of this platform I will be able to:
 Located in my github repo for desktop and mobile
 
 ## Design
-To assist with the design of the website I used a navbar, form cards and buttons from Bootstrap. The aim of this website was to create a design that was elegant and I attempted to keep the design simple and not overcrowd the page with too much information. 
+To assist with the design of the website I used a navbar, form, cards and buttons from Bootstrap. The aim of this website was to create a design that was elegant and I attempted to keep the design simple and not overcrowd the page with too much information. 
 I used resources available to me on Slack by the tutors and used the following document a guide: https://code-institute-room.slack.com/archives/C7J2ZAVHB/p1556827813043100
 -	I maintained website conventions to allow a user to find what they want easily eg. navbar at the top, clearly labelled buttons, search field at the top of the page.
 -	I used subtle but effective user actions for example buttons change colour when buttons are hovered over.
@@ -94,6 +94,7 @@ https://www.shutterstock.com/blog/wp-content/uploads/sites/5/2019/05/20-Pastel-C
 - User profile
 - Order confirmation through to email and a previous orders page.
 - Delete cart item view
+- Delete comment
 
 
 ## Technologies Used
@@ -142,6 +143,10 @@ https://www.shutterstock.com/blog/wp-content/uploads/sites/5/2019/05/20-Pastel-C
 The same tests as above were carried out on both mobile and ipad devices, with the same outcomes.
 
 ### Code Validators
+I put my code through validators for my HTML, CSS, JavaScript and Django. I found a few errors such as:
+- trailing whitespace
+- missing 'div' end tags.
+I resolved these issues and ran the code through the validators again until the validators confirmed no errors.
 
 ### Browser Testing
 
@@ -154,7 +159,10 @@ The same tests as above were carried out on both mobile and ipad devices, with t
 
 I have created a 'contact' form which submits emails to my gmail account. I was advised from the Code Institute tutors that Gitpod
 does not handle emails well and to therefore test the emails directly from Heroku instead. The emails are received when sent
-directly to Heroku.
+directly to Heroku. I also found it challenging to get my base.css to respond after setting up my AWS S3 Bucket, even after using the command "python3 manage.py collectstatic".
+I found that after running 'collect static' and pushing to github, some css code would still not take. Despite it not being best practice to put that code
+into the html template, for those classes and id's I struggled with, I included in the template to try and have my mobile and ipad view look as accurate
+as possible.
 
 ## Deployment
 
