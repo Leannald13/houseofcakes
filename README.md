@@ -19,15 +19,11 @@
 4. [**Testing**](#testing)
 
 5. [**Deployment**](#deployment)
-    - [**How to run this project locally**](#how-to-run-this-project-locally)
+    - [**Deployment to Heroku**](#deployment-to-heroku)
 
 6. [**Credits**](#credits)
-    - [**Content**](#content)
-    - [**Media**](#media)
-    - [**Code**](#code)
-    - [**Acknowledgements**](#acknowledgements)
 
-7. [**Disclaimer**](#disclaimer)
+7. [**Acknowledgment**](#acknowledgment)
 
 ## Project Introduction
 
@@ -119,9 +115,83 @@ https://www.shutterstock.com/blog/wp-content/uploads/sites/5/2019/05/20-Pastel-C
 
 ## Testing
 
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+|   Manual Test                                                      | Desired Outcome                                                              | Outcome  |
+| -------------                                                      |:-------------:                                                               | -----:|
+| Navbar > click 'shop'                                              | directed to all cakes                                                        | Pass |
+| Navbar > click 'login'                                             | Login with email & password. Details remembered                              | Pass |
+| Navbar > click 'register                                           | Register with personal details. Details remembered                           | Pass |
+| Navbar > click 'log out'                                           | Click logout. User is locked out                                             | Pass |
+| Navbar > click 'cart'                                              | Show cart items if items are in the cart. If not "Your cart is now empty"    | Pass |
+| Navbar > click 'contact'                                           | Contact form. All fields mandatory. Email received upon 'submit'             | Pass |
+| 'Shop' > click find out more                                       | directs user to product details page                                         | Pass |
+| 'Search bar' > search cake                                         | displays search items from title and description                             | Pass |
+| 'product detail' > click 'keep shopping'                           | takes user back to 'shop'                                                    | Pass |
+| 'product detail' > click 'add to cart'                             | add items to cart, displays also on navbar                                   | Pass |
+| 'product detail' > click 'checkout'                                | takes user to 'checkout page'                                                | Pass |
+| 'product detail' > type comment > press submit                     | form only displays if user. User comment and username posted.                | Pass |
+| 'product detail' > click 'checkout'                                | takes user to checkout page                                                  | Pass |
+| 'checkout' > amend quality > click amend quantity                  | quantity and order total is updated                                          | Pass |
+| 'checkout' > click 'checkout'                                      | user directed to checkout page                                               | Pass |
+| 'checkut' > input delivery details & card details > click 'paynow' | page refreshes and directs back to 'home'                                    | Pass |
+| Footer > click 'facebook icon'                                     | user directed to Facebook                                                    | Pass |
+| Footer > click 'instagram icon'                                    | user directed to Instagram                                                   | Pass |
+| Footer > click 'twitter icon'                                      | user directed to Twitter                                                     | Pass |
+
+### Mobile & ipad
+
+The same tests as above were carried out on both mobile and ipad devices, with the same outcomes.
+
+### Code Validators
+
+### Browser Testing
+
+• Google Chrome - passed
+• Internet Explorer - passed
+• Firefox - passed
+
+
+### Notable bugs 
+
+I have created a 'contact' form which submits emails to my gmail account. I was advised from the Code Institute tutors that Gitpod
+does not handle emails well and to therefore test the emails directly from Heroku instead. The emails are received when sent
+directly to Heroku.
+
+## Deployment
+
+1) Register for Heroku and once signed in click the "New" button on the dashboard to create a new app.
+
+2) In Heroku Name the app and specify the region.
+
+3) Create a requirement.txt file to allow Heroku to install the required dependencies to run the app. The CLI text to input is as follows pip3 freeze --local > requirements.txt.
+
+4) Create a Procfile to inform Heroku what type of app is being deployed echo web: python run.py > Procfile.
+
+5) In the CLI of you IDE input the following: $ heroku login $ heroku git:remote -a $ git push heroku master
+
+6) https://houseofcakes.herokuapp.com/
+
+## Credits
+
+• All image links were taken from Google searches
+• I used the mini project Boutique Ado to help throughout my project and used aspects of the code and amended it to my
+specifications.
+• I used [Stack Overflow](https://stackoverflow.com/) and [W3Schools](https://www.w3schools.com/) throughout my project
+to assist with resolving bugs and error messages.
+• I received alot of support from Scott (CI tutor) to get my Stripe payments working.
+• I looked at a number of peer code to give me model ideas and help me with various challenges particularly with my chosen 
+models 'Contact' and 'Comment'.
+https://github.com/jboyd8/jamieboydphotography
+https://github.com/EliasOPrado/tour-project
+https://github.com/ShavingSeagull/Herculean
+https://github.com/RobSimons1/ms4-ecommerce
+https://github.com/tomciosegal/nutri-store
+
+## Acknowledgments
+
+I would very much like to thank my wonderful mentor, Anthony Ngene who has been amazing, not just on this project, but the entire way through this course.
+I would also like to thank Scott, a CI tutor who gave me alot of his time when I was struggling with Stripe Payments; I don't know how
+I would have done it without him - he is an absolute sport! Thank you to JoWings (alumni from Slack) who helped me late on a Saturday night 
+when I couldn't push to github because a Core.Microsoft file had appeared in my code, and I had no idea what to do.
+Finally to a few of the CI tutors who are always patient, supportive and never make it difficult to ask for help; Haley and Anna.
+
 
