@@ -45,35 +45,29 @@
   {% if comment %} {% for usercomment in comment %}
   <div class="col-12">
     <div class="card comment-card">
-      <div class="card-header">
-        <h5>Posted By: {{ usercomment.comment_user.username }}</h5>
+      <div class="card-header comment-header">
+        <h5 class="comment-postedby">Posted By: {{ usercomment.comment_user.username }}</h5>
       </div>
       <div class="card-body">
-        <p>{{ usercomment.comment_body }}</p>
+        <p class="comment-usercomment">{{ usercomment.comment_body }}</p>
       </div>
     </div>
   </div>
   {% endfor %}
-  <div class="card-body">
-    <p>
-      No comments on this yummy cake just yet. Add a comment below to be the
-      first.
-    </p>
-  </div>
   {% endif %}
 </div>
 <!-- Form to allow users to leave a comment. Must be a user -->
 <div class="row comment-rows">
   {% if request.user.is_authenticated %}
-  <h5>Add Comment</h5>
+  <h5 class="comment-title2">Add Comment</h5>
   <div class="col-12">
-    <div class="card-body">
+    <div class="card-body comment-card">
       <form action="{% url 'comment' product.id %}" method="POST">
         {% csrf_token %}
-        <div class="form-group">
+        <div class="form-group comment-usercomment">
           {{ form }}
         </div>
-        <input type="submit" value="Submit" class="btn user-button" />
+        <input type="submit" value="Submit" class="btn user-button"/>
         {% endif %}
       </form>
     </div>

@@ -663,25 +663,6 @@ ul {
     margin-right: 20px;
 }
 
-
-@media (max-width: 767px) {
-.product-detail-name {
-    text-align: center;
-    font-size: 20px;
-    margin-left: 25px;
-    margin-top: 20px;
-}
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-.product-detail-name {
-    text-align: center;
-    font-size: 30px;
-    margin-top: 20px;
-    margin-right: 100px;
-}
-}
-
 .product-detail-price {
     text-align: center;
     font-size: 17px;
@@ -698,17 +679,6 @@ ul {
     margin-left: 10px;
 }
 }
-
-@media (min-width: 768px) and (max-width: 1024px) {
-.product-detail-price {
-    text-align: center;
-    font-size: 25px;
-    margin-top: 10px;
-    margin-right: 100px;
-    
-}
-}
-
 
 .product-detail-description {
     text-align: center;
@@ -728,16 +698,6 @@ ul {
 }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
-.product-detail-description {
-    text-align: center;
-    font-size: 20px;
-    margin-top: 10px;
-    padding-left: 60px;
-    padding-right: 100px;
-    margin-right: 80px;
-}
-}
 
 .button-detail {
     margin-left: 120px;
@@ -913,6 +873,278 @@ ul {
     font-family: 'Rubik', sans-serif;
     border: none;
     background-color: #EEF0F2;
+}
+}
+
+@media(min-width: 768px) and (max-width: 1024px) {
+.qty_input {
+    margin-left: 280px;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    color: #484848;
+    font-family: 'Rubik', sans-serif;
+    border: none;
+
+}
+
+@media(min-width: 768px) and (max-width: 1024px) {
+#qty_input {
+    margin-left: 280px;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    color: #484848;
+    font-family: 'Rubik', sans-serif;
+    border: none;
+    background-color: #EEF0F2;
+}
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+.product-detail-description {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 10px;
+    padding-left: 60px;
+    padding-right: 100px;
+    margin-right: 0;
+    margin-left: 30px;
+}
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+.product-detail-price {
+    text-align: center;
+    font-size: 25px;
+    margin-top: 10px;
+    margin-right: 10px;
+    
+}
+}
+
+@media(min-width: 768px) and (max-width: 1024px) {
+.product-detail-image {
+    width: 250px;
+    height: 250px;
+    margin-left: 260px;
+    margin-top: 80px;
+    display: inline-block;
+}
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+.product-detail-name {
+    text-align: center;
+    font-size: 35px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 0;
+}
+}
+
+
+@media (max-width: 767px) {
+.product-detail-name {
+    text-align: center;
+    font-size: 25px;
+    margin-left: 25px;
+    margin-top: 20px;
+}
+}
+
+ .comment-title {
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    margin-left: 620px;
+    color: #484848;
+ }
+
+@media(max-width: 767px) {
+  .comment-title {
+    font-size: 15px;
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    margin-left: 160px;
+    color: #484848;
+ }
+}
+
+@media(min-width: 768px) and (max-width: 1024px) {
+  .comment-title {
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    margin-left: 310px;
+    color: #484848;
+ }
+}
+
+
+ .comment-title2 {
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    margin-top: 40px;
+    margin-left: 600px;
+    color: #484848;
+ }
+
+@media(max-width: 767px) {
+  .comment-title2 {
+    font-size: 15px;
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    margin-top: 40px;
+    margin-left: 160px;
+    color: #484848;
+ }
+}
+
+@media(min-width: 768px) and (max-width: 1024px) {
+  .comment-title2 {
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    margin-left: 300px;
+    color: #484848;
+ }
+}
+
+ .comment-card {
+     margin-left: 330px;
+     width: 50%;
+ }
+
+@media(max-width: 767px) {
+ .comment-card {
+     margin-left: 50px;
+     width: 70%;
+ }
+}
+
+@media(min-width: 768px) and (max-width: 1024px) {
+ .comment-card {
+     margin-left: 80px;
+     width: 70%;
+ }
+}
+
+ .comment-postedby {
+     text-align: center;
+     font-family: 'Rubik', sans-serif;
+ }
+
+@media(max-width: 767px) {
+  .comment-postedby {
+     text-align: center;
+     font-family: 'Rubik', sans-serif;
+     font-size: 15px;
+ }
+}
+
+.comment-usercomment {
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+}
+
+@media(max-width: 767px) {
+.comment-usercomment {
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    font-size: 15px;
+}
+}
+
+.user-button {
+    margin-left: 230px;
+    margin-top: 30px;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    background-color: #a0c2e7;
+    color: #696969;
+    border: none;
+    font-family: 'Rubik', sans-serif;
+}
+
+
+.user-button:hover {
+    margin-left: 230px;
+    margin-top: 30px;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    background-color: #8caee2;
+    color: #696969;
+    border: none;
+    font-family: 'Rubik', sans-serif;
+}
+
+@media(max-width: 767px) {
+.user-button {
+    margin-left: 50px;
+    margin-top: 30px;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    background-color: #a0c2e7;
+    color: #696969;
+    border: none;
+    font-family: 'Rubik', sans-serif;
+}
+}
+
+@media(max-width: 767px) {
+.user-button:hover {
+   margin-left: 50px;
+    margin-top: 30px;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    background-color: #8caee2;
+    color: #696969;
+    border: none;
+    font-family: 'Rubik', sans-serif;
+}
+}
+
+@media(min-width: 768px) and (max-width: 1024px) {
+.user-button {
+    margin-left: 170px;
+    margin-top: 30px;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    background-color: #a0c2e7;
+    color: #696969;
+    border: none;
+    font-family: 'Rubik', sans-serif;
+}
+}
+
+@media(min-width: 768px) and (max-width: 1024px) {
+.user-button:hover {
+   margin-left: 170px;
+    margin-top: 30px;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    background-color: #8caee2;
+    color: #696969;
+    border: none;
+    font-family: 'Rubik', sans-serif;
 }
 }
 
