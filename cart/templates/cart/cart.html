@@ -2,24 +2,24 @@
 {% load static %}
 
 {% block content %}
-<div class="blankspace2"></div>
-<h2 class="cart-heading">Shopping Bag</h2>   <!-- displays the items in the shopping bag. -->
-     {% for item in cart_items %}
-  <div class="card cart-card" style="width: 25rem;">
-  <div class="card-body">
-    <p class="card-text"><img src="{{ item.product.image_url  }}" class="image-cart" style="justify-content:space-between;" alt="item.product.description"></p>
-    <p class="card-text cart3">{{ item.product.id }}</p>
-    <p class="card-text cart3">£{{ item.product.price }}</p>
-    <p class="card-text cart3">Quantity: {{ item.quantity }}</p>
-     <form action="{% url 'adjust_cart' item.product.id %}" method="POST" class="form-group">
+<div class="blankspace3"></div>
+<div class="cart-background">
+<h2 class="cart-heading">Shopping Bag</h2>   <!-- displays the items in the shopping bag. -->  
+ {% for item in cart_items %}
+ <div>
+      <img src="{{ item.product.image_url  }}" class="image-cart" alt="cakes">
+        <h5 class="card-title cart-title">{{ item.product.name }}</h5>
+        <p class="card-text cart-id">{{ item.product.id }}</p>
+        <p class="card-text cart-price">£{{ item.product.price }}</p>
+        <p class="card-text cart-quantity">Quantity: {{ item.quantity }}</p>
+        </div>
+         <form action="{% url 'adjust_cart' item.product.id %}" method="POST" class="form-group cart-input">
       {% csrf_token %}
       <!-- user can amend quantity -->
-       <input type="number" class="form-control cart-input" name="quantity" value="{{ item.quantity }}" min="0" max="5" placeholder="Amend Quantity" required>
+       <input type="number" class="form-control" name="quantity" value="{{ item.quantity }}" min="0" max="5" placeholder="Amend Quantity" required>
         <button class="btn form-control amend-quantity-button" type="submit">Amend Quantity</button>   
       </form>
       {% endfor %}
-    </div>
-</div>  
 <div class="container">
   <div class="row cart-row">
         <div class="col-lg-8">
@@ -34,185 +34,7 @@
         </div>
     </div>
 </div>
-
-<style>
-
-.blankspace3 {
-    height: 100px;
-    background-color: #fff;
-    width: 100%;
-}
-
-.blankspace2 {
-    height: 200px;
-    background-color: #fff;
-    width: 100%;
-}
-
-@media(min-width: 967px) {
-.image-cart {
-    width: 200px;
-    height: 200px;
-    margin-left: 80px;
-}
-}
-
-.cart-heading {
-      font-family: 'Satisfy', cursive;
-      font-size: 45px;
-      text-align: center;
-      color: #484848;
-      margin-bottom: 30px;  
-      margin-top: 40px;  
-}
-
-@media (max-width: 767px) {
-.cart-heading {
-      font-family: 'Satisfy', cursive;
-      font-size: 30px;
-      text-align: center;
-      color: #484848;
-      margin-bottom: 20px;
-}
-}
-
-@media(min-width: 967px) {
-.cart-subhead {
-    color: #484848;
-}
-}
-
-@media (max-width: 767px) {
-.image-cart {
-    width: 100px;
-    height: 100px;
-    margin-left: 70px !important;
-}
-}
-
-
-@media (max-width: 767px) {
-.cart-items {
-    color: #484848;
-    font-size: 15px;
-    display: block;
-    margin-left: 120px;
-    text-align: center;
-}
-}
-
-@media (max-width: 767px) {
-.cart-items2 {
-    color: #484848;
-    font-size: 15px;
-    display: block;
-    margin-left: 80px;
-}
-}
-
-
-@media(max-width: 767px) {
-.total {
-    color: #484848;
-    display: block;
-    padding-left: 5px;
-    padding-right: 5px;
-    margin-right: 180px;
-}
-}
-
-@media(max-width: 767px) {
-.checkout-button {
-    background-color: #C0C0C0;
-    display: block;
-    width: 100px;
-    margin-left: 130px;
-    margin-top: 30px;  
-}
-}
-
-
-.cart3 {
-    color: #484848;
-    font-size: 15px;
-    text-align: center;
-    font-family: 'Rubik', sans-serif;
-}
-
-#subhead-item {
-    margin-left: 100px;
-}
-
-.cart-row {
-    text-align: right;
-}
-
-.checkout-button {
-    background-color: #C0C0C0;
-    margin-left: 30px;
-}
-
-.checkout-button:hover {
-    background-color: #696969;;
-    margin-left: 30px;
-    color: white;
-}
-
-.cart-input {
-    width: 170px;
-    margin-left: 100px;
-    margin-bottom: 20px;
-}
-
-@media (max-width: 767px) {
-.cart-head {
-    color: #fdfcfc;
-}
-}
-
-.update-link,
-.remove-item {
-    cursor: pointer;
-}
-
-.amend-quantity-button {
-    background-color:  #D3D3D3;
-    width: 150px;
-    margin-left: 110px;
-}
-
-.amend-quantity-button:hover {
-    background-color: #C0C0C0;
-    width: 150px;
-    margin-left: 110px;
-}
-
-
-.card-body {
-    height: 500px;
-}
-
-.cart-card {
-    margin-top: 60px;
-    margin-bottom: 60px;
-    border-radius: 10px;
-    border-width: 2px;
-    border-color: #C0C0C0;
-    border-style: solid;
-    background-color: #EEF0F2;
-    margin-left: 200px;
-    
-}
-}
-
-::placeholder {
-    text-align: center;
-    font-family: 'Rubik', sans-serif;
-}
-
-
-</style>
-
-
+</div>
+<div class="blankspace2"></div>
 {% endblock %}
 

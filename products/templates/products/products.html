@@ -20,4 +20,43 @@
   </ul>
 </div>
 {% endfor %} 
+
+<style>
+
+/* this css is also placed in base.css (to demonstrate this was not an oversight), 
+                                however the css does not update when I collect static */
+
+.blankspace13 {    
+    height: 250px;
+
+}
+
+@media(min-width: 768px) and (max-width: 1024px) {
+.blankspace13 {
+    height: 360px;
+
+}
+}
+
+@media(max-width: 767px) {
+.blankspace13 {
+    height: 360px;
+
+}
+}
+
+@media (max-width: 767px) {
+.cakebox {  
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: #EEF0F2;
+    width: 340px !important;
+    height: 470px;
+    margin-right: 100px !important;
+    
+}
+}
+
+</style>
+
 {% endblock %}

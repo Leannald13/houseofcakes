@@ -1,4 +1,4 @@
-  
+ 
 {% extends "base.html" %}
 {% load static %}
 {% load bootstrap_tags %}
@@ -28,7 +28,7 @@
                         <div class="form-group">
                             {{ form }}
                         </div>
-                         <input class="button-contact" type="submit" name="commit" value="submit" />
+                         <input class="contact-button" type="submit" name="commit" value="submit" />
                     </form>
                 </div>
             </div>
@@ -38,4 +38,30 @@
 </div>
 <div class="blankspace5"></div>
 
+<style>
+/* this css is also placed in base.css (to demonstrate this was not an oversight), 
+                                however the css does not update when I collect static */
+.blankspace15 {   
+    background-color: #f2f7f7;                            
+    width: 100%;                   
+    height: 230px;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+.blankspace15 {
+    background-color: #f2f7f7;
+    width: 100%;
+    height: 300px;
+}
+}
+
+@media (max-width: 767px) {
+.blankspace15 {
+    background-color: #f2f7f7;
+    width: 100%;
+    height: 290px;
+}
+}
+
+</style>
 {% endblock %}
