@@ -23,11 +23,13 @@
 <div class="container">
   <div class="row cart-row">
         <div class="col-lg-8">
+            <div class="total">
             <strong class="total">Total:</strong>
             <!-- displays order total or message if cart is empty -->
             {% if total > 0 %}
-            <strong class="total"><span aria-hidden="true">£</span>{{ total }}</strong> 
+            <strong><span aria-hidden="true">£</span>{{ total }}</strong> 
                 <a class="btn checkout-button" href="{% url 'checkout' %}" role="button">Checkout</a>
+            </div>
             {% else %}
                 <p class="return-to-cakes">Your cart is now empty. Return to <a class="return-button" href="{% url 'products' %}">cakes</a>.</p>
             {% endif %}

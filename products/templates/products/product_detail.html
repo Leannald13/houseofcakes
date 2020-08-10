@@ -28,7 +28,7 @@
             <div class="col-12 all-buttons">
             <!-- Buttons to add to cart, go back to all products, or go to checkout -->
               <a href="{% url 'products' %}" class="btn btn-primary button-detail" role="button">Keep Shopping</a>
-              <input type="submit" class="btn btn-primary button-add" role="button" value="Add to Bag"/>
+              <input type="submit" class="btn btn-primary button-add" value="Add to Bag"/>
               <a class="btn btn-primary button-checkout" href="{% url 'view_cart' %}" role="button">Checkout</a>
             </div>
             <input type="hidden" name="redirect_url" value="{{ request.path }}"/>

@@ -1565,6 +1565,47 @@ ul {
 
 .checkout-button {
     background-color: #C0C0C0;
+    margin-left: 245px;
+    font-family: 'Rubik', sans-serif;
+}
+
+.total {
+    margin-left: 245px;
+    margin-bottom: 10px;
+}
+
+@media(max-width: 767px) {
+.checkout-button {
+    background-color: #C0C0C0;
+    margin-left: 70px;
+    font-family: 'Rubik', sans-serif;
+}
+}
+
+@media(max-width: 767px) {
+.total {
+    margin-left: 70px !important;
+    margin-bottom: 10px;
+}
+}
+
+@media(min-width: 768px) and (max-width: 1024px) {
+.checkout-button {
+    background-color: #C0C0C0;
+    margin-left: 90px;
+    font-family: 'Rubik', sans-serif;
+}
+}
+
+@media(min-width: 768px) and (max-width: 1024px) {
+.total {
+    margin-left: 90px !important;
+    margin-bottom: 10px;
+}
+}
+
+.checkout-button {
+    background-color: #C0C0C0;
     margin-left: 30px;
     font-family: 'Rubik', sans-serif;
 }

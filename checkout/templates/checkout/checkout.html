@@ -75,8 +75,8 @@
           <div class="form-group col-lg-6 delivery-address">
             <p class="delivery-address-title">Delivery Address</p>
             {{ order_form | as_bootstrap}}  
-              <label for="order-email">Email</label>
-              <input name="order-email" type="email" class="form-control" id="order" />
+              <p class="order-email">Email</p>
+              <input name="order-email" type="email" class="form-control" id="order"/>
           </div>
           <!-- form or payment information -->
           <div class="form-group col-lg-4 payment-info">
@@ -92,11 +92,6 @@
       </form>
     </div>
 </div>
-
-{% for message in messages %}
-<div>{{ message }}</div>
-{% endfor %}
-
 <div class="blankspace5"></div>
 
 {% endblock %}
