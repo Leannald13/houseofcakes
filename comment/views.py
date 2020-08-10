@@ -14,7 +14,7 @@ def comment(request, product_id):
         form = Comment(
             comment_body=request.POST['comment_body'],
             comment_user=request.user,
-            Product=product_id,
+            product_id=Product.objects.get(pk=product_id),
 
         )
 
@@ -32,8 +32,8 @@ def comment(request, product_id):
 
         form.save()
 
-        context = {
-                'form': CommentForm,
-            }
+    context = {
+            'form': CommentForm,
+        }
  
-        return redirect(reverse('product_detail', kwargs={'product_id': product_id}), context)
+    return redirect(reverse('product_detail', kwargs={'product_id': product_id}), context)
